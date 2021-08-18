@@ -76,6 +76,31 @@ module.exports = {
         develop: false,
         tailwind: true,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Oswald`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-sitemap`,
+     {
+    resolve: `gatsby-source-strapi`,
+    options: {
+      apiURL: `http://localhost:1337`,
+      queryLimit: 1000, // Defaults to 100
+      collectionTypes: [`article`, `user`],
+      singleTypes: [`home-page`, `contact`],
+    },
+  },
   ],
 }
