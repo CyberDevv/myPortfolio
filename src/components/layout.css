@@ -9,9 +9,35 @@ h2 {
 h3 {
   @apply text-lg;
 }
-a {
-  @apply text-blue-600;
+
+.socialIcon {
+  @apply text-light hover:text-primary duration-300 transform-gpu hover:scale-125 transition-all;
 }
 
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color : #171717 ;
+  color: #EDEDED;
+}
+
+.hero {
+  height: calc(100vh - 60px);
+}
+
+/* .withBeforeText::before {
+  content: "FrontEnd";
+    position: absolute;
+    top: 0;
+    text-align: center;
+    left: 0;
+    font-weight: 900;
+    opacity: .1;
+    font-size: 10rem;
+    line-height: 1.1;
+    font-family: inherit;
+    overflow-wrap: anywhere;
+    letter-spacing: 10px;
+    color: #313131;
+} */

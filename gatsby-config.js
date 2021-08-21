@@ -1,11 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby TailwindCSS Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter with TailwindCSS and common dev tools. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@kosvrouvas`,
-  },
-  flags: {
-    THE_FLAG: false
+    title: `Ibrahim Odesola`,
+    description: `I am Ibrahim Odesola, a Frond-End Developer with 2+ years of experience. I use ReactJS, GatsbyJS and also TailwindCSS. Also I'm free for hiring.`,
+    author: `@CyberDevv`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Ibrahim Odesola`,
+        short_name: `Ibrahim Odesola`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -66,8 +63,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require("tailwindcss"), require("autoprefixer")]
-      }
+        postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
+      },
     },
     {
       resolve: `gatsby-plugin-purgecss`,
@@ -77,30 +74,30 @@ module.exports = {
         tailwind: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Oswald`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`]
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Oswald`,
+    //         subsets: [`latin`],
+    //       },
+    //       {
+    //         family: `Open Sans`,
+    //         variants: [`400`, `700`],
+    //       },
+    //     ],
+    //   },
+    // },
     `gatsby-plugin-sitemap`,
-     {
-    resolve: `gatsby-source-strapi`,
-    options: {
-      apiURL: `http://localhost:1337`,
-      queryLimit: 1000, // Defaults to 100
-      collectionTypes: [`article`, `user`],
-      singleTypes: [`home-page`, `contact`],
-    },
-  },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     apiURL: `http://localhost:1337`,
+    //     queryLimit: 1000, // Defaults to 100
+    //     collectionTypes: [`article`, `user`],
+    //     singleTypes: [`home-page`, `contact`],
+    //   },
+    // },
   ],
 }
