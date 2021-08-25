@@ -18,12 +18,66 @@ h3 {
 @tailwind utilities;
 
 body {
-  background-color : #171717 ;
-  color: #EDEDED;
+  background-color: #171717;
+  color: #ededed;
+  font-family: "Work Sans", sans-serif;
 }
 
 .hero {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 92px);
+}
+
+.navItem {
+  position: relative;
+}
+
+.navItem:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: #da0037;
+  height: 100%;
+  animation: overHover 1s ease-in-out;
+  -webkit-animation: overHover 1s ease-in-out;
+  z-index: -1;
+  right: -9px;
+  width: 4px;
+}
+
+@keyframes overHover {
+  0% {
+    left: -10px;
+    width: 4px;
+  }
+
+  50% {
+    width: 130%;
+  }
+
+  100% {
+    right: -10px;
+    width: 4px;
+  }
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: #da0037;
+  height: 100%;
+  z-index: -1;
+  left: -10px;
+  width: 4px;
+}
+
+.active:hover {
+  color: #fff;
+  transition:color .5s ease-in-out ;
+  -webkit-transition:color .5s ease-in-out ;
+  -moz-transition:color .5s ease-in-out ;
+  -ms-transition:color .5s ease-in-out ;
+  -o-transition:color .5s ease-in-out ;
 }
 
 /* .withBeforeText::before {

@@ -5,8 +5,8 @@ import { FaAlignRight } from 'react-icons/fa'
 const NavBar = () => {
   return (
     <nav>
-      <div className="flex items-center py-4 lg:space-x-28">
-        <div className="flex justify-between items-center flex-grow lg:flex-grow-0">
+      <div className="flex items-center py-4 lg:py-8 lg:space-x-32">
+        <div className="flex justify-between items-center flex-grow lg:flex-grow-0 z-10">
           {/* Logo */}
           <h4 className="text-xl font-bold">IO</h4>
 
@@ -21,8 +21,9 @@ const NavBar = () => {
 
         {/* navMenu */}
         <PageLinks
-          styleClass="lg:flex space-x-12 items-center hidden justify-end capitalize tracking-widest text-light"
-          linkStyle= "text-white"
+          styleClass="lg:flex space-x-12 items-center hidden justify-around capitalize tracking-widest text-light w-8/12 z-10"
+          linkStyle="navItem py-1"
+          activeStyleClass="text-primary font-semibold active"
         ></PageLinks>
       </div>
     </nav>

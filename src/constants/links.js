@@ -23,13 +23,17 @@ const data = [
   },
 ]
 
-const PageLinks = ({ styleClass, linkStyle }) => {
+const PageLinks = ({ styleClass, linkStyle, activeStyleClass }) => {
   return (
     <ul className={`${styleClass ? styleClass : ""}`}>
       {data.map(link => {
         return (
           <li key={link.id}>
-            <Link className={`${linkStyle ? linkStyle : ""}`} to={link.url}>
+            <Link
+              className={`${linkStyle ? linkStyle : ""}`}
+              activeClassName={`${activeStyleClass ? activeStyleClass : ""}`}
+              to={link.url}
+            >
               {link.text}
             </Link>
           </li>
