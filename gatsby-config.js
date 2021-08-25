@@ -75,16 +75,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        fonts: [
-          {
-            family: `Work Sans`
-          },
-        ],
+        google: {
+          families: ["Work Sans"],
+        },
       },
-    },
-    `gatsby-plugin-sitemap`,
+    }`gatsby-plugin-sitemap`,
     // {
     //   resolve: `gatsby-source-strapi`,
     //   options: {
