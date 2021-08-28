@@ -1,5 +1,5 @@
 import React from "react"
-import ParticleAnimation from "react-particle-animation"
+import Particles from "react-particles-js"
 
 import Hero from "../components/Hero"
 import Layout from "../components/layout"
@@ -9,18 +9,67 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <ParticleAnimation
-        numParticles={300}
-        background={{ r: 23, g: 23, b: 23, a: 40 }}
-        color={{ r: 255, g: 255, b: 255, a: 255 }}
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          top: "0",
-          left: "0"
-        }}
-      />
+      <div className= "md:hidden">
+        <Particles
+          className="absolute top-0 left-0 h-screen w-full"
+          params={{
+            particles: {
+              number: {
+                value: 50,
+              },
+              size: {
+                value: 3,
+              },
+            },
+            fpsLimit: 60,
+            interactivity: {
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse",
+                  parallax: {
+                    enable: true,
+                    force: 60,
+                    smooth: 10,
+                  },
+                },
+              },
+            },
+            responsive: [],
+          }}
+        />
+      </div>
+
+      <div className="hidden md:inline">
+        <Particles
+          className="absolute top-0 left-0 h-screen w-full"
+          params={{
+            particles: {
+              number: {
+                value: 100,
+              },
+              size: {
+                value: 3,
+              },
+            },
+            fpsLimit: 60,
+            interactivity: {
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse",
+                  parallax: {
+                    enable: true,
+                    force: 60,
+                    smooth: 10,
+                  },
+                },
+              },
+            },
+            responsive: [],
+          }}
+        />
+      </div>
       <Hero />
     </Layout>
   )
