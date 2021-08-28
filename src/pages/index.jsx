@@ -70,6 +70,7 @@ const IndexPage = () => {
           }}
         />
       </div>
+      
       <Hero />
     </Layout>
   )

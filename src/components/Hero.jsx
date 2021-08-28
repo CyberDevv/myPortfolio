@@ -1,12 +1,19 @@
-import React from 'react'
+import React from "react"
 import SocialLinks from "../constants/socialLinks"
+import { motion } from "framer-motion"
 
 const Hero = () => {
   return (
     <div className="hero flex flex-col lg:flex-row w-full items-center justify-center tracking-widest">
       {/* Section one */}
       <div className="lg:w-7/12 w-full text-center z-10">
-        <h5 className="lg:text-xl">Front-End Developer</h5>
+        <motion.h5
+          className="lg:text-xl"
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+        >
+          Front-End Developer
+        </motion.h5>
         <div className="bg-gray-200 w-full h-px my-8"></div>
         <SocialLinks styleClass="flex justify-evenly text-xl lg:text-2xl" />
       </div>
