@@ -92,5 +92,11 @@ module.exports = {
     //     singleTypes: [`home-page`, `contact`],
     //   },
     // },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "https://cdn.rawgit.com/progers/pathseg/master/pathseg.js",
+      },
+    },
   ],
 }
