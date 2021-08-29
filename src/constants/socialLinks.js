@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import {
   FaFacebookSquare,
   FaLinkedin,
@@ -31,7 +32,12 @@ const data = [
 
 const socialLinks = ({ styleClass }) => {
   return (
-    <ul className={`social-links ${styleClass ? styleClass : ""}`}>
+    <motion.ul
+      className={`social-links ${styleClass ? styleClass : ""}`}
+      initial={{opacity: 0, y: -50 }}
+      animate={{opacity: 1, y: 0 }}
+      transition= {{delay: 3, stiffness: 50, damping: 5, type: "spring"}}
+    >
       {data.map(link => {
         return (
           <li key={link.id}>
@@ -41,7 +47,7 @@ const socialLinks = ({ styleClass }) => {
           </li>
         )
       })}
-    </ul>
+    </motion.ul>
   )
 }
 

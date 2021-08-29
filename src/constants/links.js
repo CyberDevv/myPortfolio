@@ -1,5 +1,7 @@
 import React from "react"
+import { motion } from 'framer-motion'
 import { Link } from "gatsby"
+
 const data = [
   {
     id: 1,
@@ -25,7 +27,17 @@ const data = [
 
 const PageLinks = ({ styleClass, linkStyle, activeStyleClass }) => {
   return (
-    <ul className={`${styleClass ? styleClass : ""}`}>
+    <motion.ul
+      className={`${styleClass ? styleClass : ""}`}
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      transition={{
+        staggerChildren: 0.5,
+        type: "tween",
+        delay: 0.5,
+        duration: 2,
+      }}
+    >
       {data.map(link => {
         return (
           <li key={link.id}>
@@ -39,7 +51,7 @@ const PageLinks = ({ styleClass, linkStyle, activeStyleClass }) => {
           </li>
         )
       })}
-    </ul>
+    </motion.ul>
   )
 }
 
