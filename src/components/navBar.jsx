@@ -33,7 +33,7 @@ const NavBar = () => {
 
         {/* navMenu */}
         <PageLinks
-          styleClass="lg:flex space-x-12 items-center hidden space-x-40 capitalize tracking-widest text-light w-8/12 z-10 overflow-hidden"
+          styleClass="lg:flex space-x-12 items-center hidden justify-around capitalize tracking-widest text-light w-8/12 z-10 overflow-hidden"
           linkStyle="navItem py-1"
           activeStyleClass="text-primary font-semibold active"
         ></PageLinks>

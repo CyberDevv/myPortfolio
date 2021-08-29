@@ -10,6 +10,10 @@ h3 {
   @apply text-lg;
 }
 
+.btn {
+  @apply py-2 px-10 lg:mt-20 rounded-3xl mt-16 lg:text-xl lg:px-16 lg:py-3 lg:rounded-full focus:outline-none transition-colors;
+}
+
 .socialIcon {
   @apply text-light hover:text-primary duration-300 transform-gpu hover:scale-125 transition-all;
 }
@@ -79,19 +83,3 @@ body {
   -ms-transition:color .5s ease-in-out ;
   -o-transition:color .5s ease-in-out ;
 }
-
-/* .withBeforeText::before {
-  content: "FrontEnd";
-    position: absolute;
-    top: 0;
-    text-align: center;
-    left: 0;
-    font-weight: 900;
-    opacity: .1;
-    font-size: 10rem;
-    line-height: 1.1;
-    font-family: inherit;
-    overflow-wrap: anywhere;
-    letter-spacing: 10px;
-    color: #313131;
-} */
