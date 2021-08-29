@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import React from "react"
 import Particles from "react-particles-js"
 
@@ -9,7 +10,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <div className= "md:hidden">
+      <motion.div
+        className="md:hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3 }}
+      >
         <Particles
           className="absolute top-0 left-0 h-screen w-full"
           params={{
@@ -38,9 +44,14 @@ const IndexPage = () => {
             responsive: [],
           }}
         />
-      </div>
+      </motion.div>
 
-      <div className="hidden md:inline">
+      <motion.div
+        className="hidden md:inline"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3 }}
+      >
         <Particles
           className="absolute top-0 left-0 h-screen w-full"
           params={{
@@ -69,8 +80,8 @@ const IndexPage = () => {
             responsive: [],
           }}
         />
-      </div>
-      
+      </motion.div>
+
       <Hero />
     </Layout>
   )

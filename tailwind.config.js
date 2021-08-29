@@ -9,9 +9,12 @@ module.exports = {
         dark: "#444444",
         light: "#EDEDED",
         primary: "#DA0037",
+        primaryDark: "#B8002E",
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
 }

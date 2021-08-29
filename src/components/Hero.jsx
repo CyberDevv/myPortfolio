@@ -44,7 +44,7 @@ const Hero = () => {
         </motion.h4>
 
         <motion.button
-          className="bg-primary py-2 px-10 br-5 lg:mt-20 rounded-3xl mt-16 lg:text-xl lg:px-16 lg:py-3 lg:rounded-full"
+          className="btn bg-primary hover:bg-primaryDark"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 3, stiffness: 50, type: "spring" }}
