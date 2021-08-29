@@ -5,7 +5,7 @@ import NavBar from "./navBar"
 
 const Layout = ({ children }) => {
   return (
-    <div className= "min-h-screen container mx-auto px-4 lg:px-0">
+    <div className= "min-h-screen container mx-auto px-4 lg:px-0 overflow-x-hidden">
       <NavBar />
       {children}
     </div>
