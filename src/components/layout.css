@@ -25,6 +25,10 @@ ul {
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primaryColor: #da0037;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -51,7 +55,7 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  background-color: #da0037;
+  background-color: var(--primaryColor);
   height: 100%;
   animation: overHover 1s ease-in-out;
   -webkit-animation: overHover 1s ease-in-out;
@@ -80,7 +84,7 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  background-color: #da0037;
+  background-color: var(--primaryColor);
   height: 100%;
   z-index: -1;
   left: -10px;
@@ -98,7 +102,7 @@ body {
 
 .headerTitle::after {
   position: absolute;
-  background-color: #da0037;
+  background-color: var(--primaryColor);
   content: "";
   z-index: -1;
   left: 0;
@@ -220,4 +224,14 @@ body {
   100% {
     transform: rotate(5deg);
   }
+}
+
+.mobileActive::before {
+  content: "";
+  position: absolute;
+  background-color: var(--primaryColor);
+  top: 0;
+  left: -8px;
+  height: 100%;
+  width: 4px;
 }
