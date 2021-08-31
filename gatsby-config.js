@@ -79,6 +79,7 @@ module.exports = {
       options: {
         google: {
           families: ["Work Sans"],
+          families: ["Roboto Mono"],
         },
       },
     },
