@@ -10,22 +10,38 @@ const AboutMe = () => {
     <div className="flex justify-between items-center">
       {/* Details*/}
       <div className="lg:w-1/2 divide-y-2 divide-opacity-20 divide-gray-100">
-        <h3 className="mt-8 text-sm tracking-widest leading-loose font-roboto">
+        <motion.h3
+          className="mt-8 text-sm tracking-widest leading-loose font-roboto"
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 2.5, type: "spring", stiffness: "50" }}
+        >
           I am a Front-End developer with more than 3+ years of experience in
           building websites and web applications. I specialize in JavaScript and
           have professional experience working with ReactJS and APIs to create
           functional, aestheticc websites that users can interact with. I also
           have experience working with TailwindCSS, JQuery, GatsbyJS and also
           NodeJS. You can checkout some of my projects.
-        </h3>
-        <div className="mt-8 grid grid-cols-2 gap-4 pt-8 font-roboto">
-          <h4 className="flex items-center">
+        </motion.h3>
+        <motion.div
+          className="mt-8 grid grid-cols-2 gap-4 pt-8 font-roboto"
+          initial={{ opacity: 0 ,y: -100 }}
+          animate={{ opacity: 1 ,y: 0 }}
+          transition={{ delay: 2.8, type: "spring", stiffness: "20", damping: "3" }}
+        >
+          <motion.h4 className="flex items-center" 
+          initial={{ opacity: 0 ,y: -100 }}
+          animate={{ opacity: 1 ,y: 0 }}
+          transition={{ delay: 3, type: "spring", stiffness: "20", damping: "3" }}>
             <FaUserAlt className="text-base" />:{" "}
             <span className="ml-2">Ibrahim Odesola</span>
-          </h4>
+          </motion.h4>
 
           {/* Email */}
-          <h4 className="flex items-center">
+          <motion.h4 className="flex items-center" 
+          initial={{ opacity: 0 ,y: -100 }}
+          animate={{ opacity: 1 ,y: 0 }}
+          transition={{ delay: 3.2, type: "spring", stiffness: "20", damping: "3" }}>
             <MdEmail className="text-lg" />:
             <a
               className="ml-2"
@@ -35,10 +51,13 @@ const AboutMe = () => {
             >
               tocyberdevv@gmail.com
             </a>
-          </h4>
+          </motion.h4>
 
           {/* Whatsapp */}
-          <h4 className="flex items-center">
+          <motion.h4 className="flex items-center" 
+          initial={{ opacity: 0 ,y: -100 }}
+          animate={{ opacity: 1 ,y: 0 }}
+          transition={{ delay: 3.4, type: "spring", stiffness: "20", damping: "3" }}>
             <RiWhatsappFill className="text-lg" />:
             <a
               className="ml-2"
@@ -48,10 +67,13 @@ const AboutMe = () => {
             >
               +2348072534558
             </a>
-          </h4>
+          </motion.h4>
 
           {/* github */}
-          <h4 className="flex items-center">
+          <motion.h4 className="flex items-center" 
+          initial={{ opacity: 0 ,y: -100 }}
+          animate={{ opacity: 1 ,y: 0 }}
+          transition={{ delay: 3.6, type: "spring", stiffness: "20", damping: "3" }}>
             <RiGithubFill className="text-lg" />:
             <a
               className="ml-2"
@@ -61,10 +83,13 @@ const AboutMe = () => {
             >
               github.com/CyberDevv
             </a>
-          </h4>
+          </motion.h4>
 
           {/* Twitter */}
-          <h4 className="flex items-center">
+          <motion.h4 className="flex items-center" 
+          initial={{ opacity: 0 ,y: -100 }}
+          animate={{ opacity: 1 ,y: 0 }}
+          transition={{ delay: 3.8, type: "spring", stiffness: "20", damping: "3" }}>
             <RiTwitterFill className="text-lg" />:
             <a
               className="ml-2"
@@ -74,8 +99,8 @@ const AboutMe = () => {
             >
               twitter.com/CyberDevv
             </a>
-          </h4>
-        </div>
+          </motion.h4>
+        </motion.div>
       </div>
 
       {/* Images Section */}
@@ -83,7 +108,7 @@ const AboutMe = () => {
         className="lg:w-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 2 }}
+        transition={{ delay: 4.3, duration: 2 }}
       >
         <div>
           <div className="relative flex justify-center items-center">
