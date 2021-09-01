@@ -21,7 +21,12 @@ const Hero = () => {
           animate={{ x: 0 }}
           transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
         ></motion.div>
-        <SocialLinks styleClass="flex justify-evenly text-xl lg:text-2xl" />
+        <SocialLinks
+          styleClass="flex justify-evenly text-xl lg:text-2xl"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3, stiffness: 50, damping: 5, type: "spring" }}
+        />
       </div>
 
       {/* section two */}

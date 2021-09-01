@@ -1,5 +1,5 @@
 import React from "react"
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 import { Link } from "gatsby"
 
 const data = [
@@ -25,18 +25,20 @@ const data = [
   },
 ]
 
-const PageLinks = ({ styleClass, linkStyle, activeStyleClass }) => {
+const PageLinks = ({
+  styleClass,
+  linkStyle,
+  activeStyleClass,
+  initial,
+  animate,
+  transition,
+}) => {
   return (
     <motion.ul
       className={`${styleClass ? styleClass : ""}`}
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      transition={{
-        staggerChildren: 0.5,
-        type: "tween",
-        delay: 0.5,
-        duration: 2,
-      }}
+      initial={initial}
+      animate={animate}
+      transition={transition}
     >
       {data.map(link => {
         return (

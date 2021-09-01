@@ -30,13 +30,13 @@ const data = [
   },
 ]
 
-const socialLinks = ({ styleClass }) => {
+const socialLinks = ({ styleClass, initial, animate, transition }) => {
   return (
     <motion.ul
       className={`social-links ${styleClass ? styleClass : ""}`}
-      initial={{opacity: 0, y: -50 }}
-      animate={{opacity: 1, y: 0 }}
-      transition= {{delay: 3, stiffness: 50, damping: 5, type: "spring"}}
+      initial={ initial }
+      animate={ animate }
+      transition= { transition }
     >
       {data.map(link => {
         return (
