@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 import PageLinks from "../constants/links"
 import { FaAlignRight } from "react-icons/fa"
 import SocialLink from "../constants/socialLinks"
+import Particles from "react-particles-js"
 
 const NavBar = () => {
   const [navBarOpened, isNavBarOpened] = useState(false)
@@ -42,26 +43,99 @@ const NavBar = () => {
         ></PageLinks>
 
         {/* mobile NavMenu */}
-        <div
-          className={`${
-            navBarOpened ? "fixed" : "hidden"
-          } top-0 left-0 h-screen w-full bg-darker z-50 text-gray-200`}
-        >
-          <button
-            className="focus:outline-none"
-            onClick={() => isNavBarOpened(!navBarOpened)}
-          >
-            <AiOutlineCloseCircle className="text-3xl absolute top-4 right-4" />
-          </button>
-          <div className="flex justify-center items-center h-full flex-col space-y-16">
-            <PageLinks
-              styleClass="flex flex-col justify-center items-center uppercase font-bold text-xl tracking-widest leading-10 space-y-8"
-              linkStyle=""
-              activeStyleClass="mobileActive relative"
-            ></PageLinks>
-            <SocialLink styleClass="flex justify-evenly text-xl text-2xl w-full" />
-          </div>
-        </div>
+        <AnimatePresence>
+          {navBarOpened && (
+            <motion.div
+              className="fixed top-0 left-0 h-screen w-full bg-darker z-50 text-gray-200"
+              animate={{ x: 0 }}
+              initial={{ x: "-100vw" }}
+              exit={{ x: "-100vw" }}
+            >
+              <Particles
+                className="absolute top-0 left-0 h-screen w-full"
+                params={{
+                  detectRetina: true,
+                  fpsLimit: 60,
+                  particles: {
+                    links: {
+                      enable: false,
+                    },
+                    move: {
+                      outModes: {
+                        default: "destroy",
+                        bottom: "destroy",
+                        left: "destroy",
+                        right: "destroy",
+                        top: "destroy",
+                      },
+                      random: false,
+                      speed: 7,
+                    },
+                    number: {
+                      limit: 0,
+                      value: 0,
+                    },
+                    opacity: {
+                      value: 0.4,
+                    },
+                    shape: {
+                      type: "circle",
+                    },
+                    size: {
+                      value: {
+                        min: 0.1,
+                        max: 10,
+                      },
+                      animation: {
+                        count: 0,
+                        enable: true,
+                        speed: 5,
+                        sync: true,
+                        destroy: "max",
+                        startValue: "min",
+                        minimumValue: 0.1,
+                      },
+                    },
+                  },
+                  pauseOnBlur: true,
+                  zLayers: 100,
+                  emitters: {
+                    rate: {
+                      quantity: 2,
+                      delay: 0.1,
+                    },
+                    startCount: 0,
+                    size: {
+                      mode: "percent",
+                      height: 0,
+                      width: 100,
+                    },
+                    direction: "top",
+                    position: {
+                      x: 50,
+                      y: 100,
+                    },
+                  },
+                }}
+              />
+
+              <button
+                className="focus:outline-none"
+                onClick={() => isNavBarOpened(!navBarOpened)}
+              >
+                <AiOutlineCloseCircle className="text-3xl absolute top-4 right-4" />
+              </button>
+              <div className="flex justify-center items-center h-full flex-col space-y-16">
+                <PageLinks
+                  styleClass="flex flex-col justify-center items-center uppercase font-bold text-xl tracking-widest leading-10 space-y-8"
+                  linkStyle=""
+                  activeStyleClass="mobileActive relative"
+                ></PageLinks>
+                <SocialLink styleClass="flex justify-evenly text-xl text-2xl w-full" />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )
