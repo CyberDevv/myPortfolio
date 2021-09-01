@@ -40,7 +40,7 @@ body {
 }
 
 .font-roboto {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 .hero {
@@ -149,14 +149,14 @@ body {
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-}
+  }
   100% {
     transform: rotate(1turn);
     -webkit-transform: rotate(1turn);
     -moz-transform: rotate(1turn);
     -ms-transform: rotate(1turn);
     -o-transform: rotate(1turn);
-}
+  }
 }
 
 .outerCircle {
@@ -179,14 +179,14 @@ body {
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-}
+  }
   100% {
     transform: rotate(1turn);
     -webkit-transform: rotate(1turn);
     -moz-transform: rotate(1turn);
     -ms-transform: rotate(1turn);
     -o-transform: rotate(1turn);
-}
+  }
 }
 
 .planetCircle {
