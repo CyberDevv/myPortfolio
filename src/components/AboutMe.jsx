@@ -64,7 +64,7 @@ const AboutMe = () => {
             <MdEmail className="text-lg" />:
             <a
               className="ml-2"
-              href="tocyberdevv@gmail.com"
+              href="mailto:tocyberdevv@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -87,7 +87,7 @@ const AboutMe = () => {
             <RiWhatsappFill className="text-lg" />:
             <a
               className="ml-2"
-              href="https://wa.me/%2B2348072534558"
+              href="https://wa.me/2348072534558?text=Hello!"
               target="_blank"
               rel="noopener noreferrer"
             >

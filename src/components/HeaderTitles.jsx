@@ -1,13 +1,13 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-const HeaderTitles = ({ title }) => {
+const HeaderTitles = ({ title, className }) => {
   return (
     <motion.h1
-      className="lg:text-5xl font-black headerTitle relative pt-2 uppercase leading-loose"
+      className={` ${className ? className : "" } lg:text-5xl font-black headerTitle relative pt-2 uppercase leading-loose`}
       initial={{ opacity: 0 }}
-      animate= {{opacity: 1}}
-      transition= {{delay: 2}}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 2 }}
     >
       {title}
     </motion.h1>
