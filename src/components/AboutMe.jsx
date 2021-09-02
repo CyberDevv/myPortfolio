@@ -7,11 +7,11 @@ import { RiWhatsappFill, RiGithubFill, RiTwitterFill } from "react-icons/ri"
 
 const AboutMe = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="lg:flex lg:justify-between lg:items-center">
       {/* Details*/}
       <div className="lg:w-1/2 divide-y-2 divide-opacity-20 divide-gray-100">
         <motion.h3
-          className="mt-8 text-sm tracking-widest leading-loose font-roboto"
+          className="mt-8 text-xs lg:text-sm tracking-widest leading-loose font-roboto"
           initial={{ x: -1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 2.5, type: "spring", stiffness: "50" }}
@@ -24,24 +24,43 @@ const AboutMe = () => {
           NodeJS. You can checkout some of my projects.
         </motion.h3>
         <motion.div
-          className="mt-8 grid grid-cols-2 gap-4 pt-8 font-roboto"
-          initial={{ opacity: 0 ,y: -100 }}
-          animate={{ opacity: 1 ,y: 0 }}
-          transition={{ delay: 2.8, type: "spring", stiffness: "20", damping: "3" }}
+          className="mt-8 grid lg:grid-cols-2 gap-4 pt-8 font-roboto text-xs lg:text-sm"
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 2.8,
+            type: "spring",
+            stiffness: "20",
+            damping: "3",
+          }}
         >
-          <motion.h4 className="flex items-center" 
-          initial={{ opacity: 0 ,y: -100 }}
-          animate={{ opacity: 1 ,y: 0 }}
-          transition={{ delay: 3, type: "spring", stiffness: "20", damping: "3" }}>
+          <motion.h4
+            className="flex items-center"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 3,
+              type: "spring",
+              stiffness: "20",
+              damping: "3",
+            }}
+          >
             <FaUserAlt className="text-base" />:{" "}
             <span className="ml-2">Ibrahim Odesola</span>
           </motion.h4>
 
           {/* Email */}
-          <motion.h4 className="flex items-center" 
-          initial={{ opacity: 0 ,y: -100 }}
-          animate={{ opacity: 1 ,y: 0 }}
-          transition={{ delay: 3.2, type: "spring", stiffness: "20", damping: "3" }}>
+          <motion.h4
+            className="flex items-center"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 3.2,
+              type: "spring",
+              stiffness: "20",
+              damping: "3",
+            }}
+          >
             <MdEmail className="text-lg" />:
             <a
               className="ml-2"
@@ -54,10 +73,17 @@ const AboutMe = () => {
           </motion.h4>
 
           {/* Whatsapp */}
-          <motion.h4 className="flex items-center" 
-          initial={{ opacity: 0 ,y: -100 }}
-          animate={{ opacity: 1 ,y: 0 }}
-          transition={{ delay: 3.4, type: "spring", stiffness: "20", damping: "3" }}>
+          <motion.h4
+            className="flex items-center"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 3.4,
+              type: "spring",
+              stiffness: "20",
+              damping: "3",
+            }}
+          >
             <RiWhatsappFill className="text-lg" />:
             <a
               className="ml-2"
@@ -70,10 +96,17 @@ const AboutMe = () => {
           </motion.h4>
 
           {/* github */}
-          <motion.h4 className="flex items-center" 
-          initial={{ opacity: 0 ,y: -100 }}
-          animate={{ opacity: 1 ,y: 0 }}
-          transition={{ delay: 3.6, type: "spring", stiffness: "20", damping: "3" }}>
+          <motion.h4
+            className="flex items-center"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 3.6,
+              type: "spring",
+              stiffness: "20",
+              damping: "3",
+            }}
+          >
             <RiGithubFill className="text-lg" />:
             <a
               className="ml-2"
@@ -86,10 +119,17 @@ const AboutMe = () => {
           </motion.h4>
 
           {/* Twitter */}
-          <motion.h4 className="flex items-center" 
-          initial={{ opacity: 0 ,y: -100 }}
-          animate={{ opacity: 1 ,y: 0 }}
-          transition={{ delay: 3.8, type: "spring", stiffness: "20", damping: "3" }}>
+          <motion.h4
+            className="flex items-center"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 3.8,
+              type: "spring",
+              stiffness: "20",
+              damping: "3",
+            }}
+          >
             <RiTwitterFill className="text-lg" />:
             <a
               className="ml-2"
@@ -105,7 +145,7 @@ const AboutMe = () => {
 
       {/* Images Section */}
       <motion.div
-        className="lg:w-1/2"
+        className="lg:w-1/2 mt-32 lg:mt-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 4.3, duration: 2 }}
@@ -113,18 +153,16 @@ const AboutMe = () => {
         <div>
           <div className="relative flex justify-center items-center">
             <StaticImage
-              height={350}
-              width={350}
               src="../images/myImage.jpg"
               alt="myImage"
-              className="rounded-full myIMage"
+              className="rounded-full myIMage h-60 w-60 lg:h-80 lg:w-80"
               placeholder="tracedSVG"
             />
 
             {/* InnerCircle */}
             <div class="absolute innerCircle">
               {/* ReactJS */}
-              <i className="planetCircle -left-6">
+              <i className="planetCircle -left-4 lg:-left-6">
                 <svg
                   preserveAspectRatio="xMidYMid"
                   version="1.1"
@@ -152,7 +190,7 @@ const AboutMe = () => {
 
               {/* Github */}
               <img
-                className="planetCircle -right-6"
+                className="planetCircle -right-4 lg:-right-6"
                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="
                 alt="github"
               />
@@ -162,7 +200,7 @@ const AboutMe = () => {
             <div class="absolute outerCircle flex-col">
               <div className="flex justify-between items-center w-full">
                 {/* TailwindCSS */}
-                <i className="planetCircle -left-6">
+                <i className="planetCircle -left-4 lg:-left-6">
                   {" "}
                   <svg
                     width="40"
@@ -183,7 +221,7 @@ const AboutMe = () => {
                 </i>
 
                 {/* Redux */}
-                <i className="planetCircle -right-6">
+                <i className="planetCircle -right-4 lg:-right-6">
                   <svg
                     width="40"
                     height="40"
@@ -201,7 +239,7 @@ const AboutMe = () => {
 
               <div className="flex justify-between items-center w-full transform rotate-90">
                 {/* NodeJS */}
-                <i className="planetCircle -left-14">
+                <i className="planetCircle -left-8 lg:-left-14">
                   <svg
                     width="40"
                     height="40"
