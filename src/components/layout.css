@@ -121,6 +121,14 @@ body {
   content: "Skills";
 }
 
+.projectTitle::before {
+  content: "Projects";
+}
+
+.contactTitle::before {
+  content: "Contact";
+}
+
 .headerTitle::before {
   position: absolute;
   z-index: -1;
