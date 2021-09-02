@@ -34,7 +34,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   background-color: #171717;
   color: #ededed;
   font-family: "Work Sans", sans-serif;
@@ -114,9 +113,16 @@ body {
   height: 5px;
 }
 
+.aboutTitle::before {
+  content: "About Me";
+}
+
+.skillTitle::before {
+  content: "Skills";
+}
+
 .headerTitle::before {
   position: absolute;
-  content: "About Me";
   z-index: -1;
   font-size: 190px;
   bottom: auto;
@@ -237,7 +243,14 @@ body {
   width: 4px;
 }
 
+.leading-loose {
+  line-height: 2 !important;
+}
+
 @media screen and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
   .headerTitle::after {
     width: 10%;
   }
