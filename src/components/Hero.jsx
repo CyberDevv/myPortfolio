@@ -1,6 +1,7 @@
 import React from "react"
 import SocialLinks from "../constants/socialLinks"
 import { motion } from "framer-motion"
+import Ripples from "react-ripples"
 
 const Hero = () => {
   return (
@@ -40,7 +41,7 @@ const Hero = () => {
           Hell<span className="text-primary">o</span>,
         </motion.h1>
         <motion.h4
-          className="text-3xl lg:text-5xl mt-4 lg:mt-6"
+          className="text-3xl lg:text-5xl mt-4 lg:mt-6 lg:mb-20 mb-16"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
@@ -48,14 +49,16 @@ const Hero = () => {
           I am Ibrahim
         </motion.h4>
 
-        <motion.button
-          className="btn bg-primary hover:bg-primaryDark"
-          initial={{ x: 1000 }}
-          animate={{ x: 0 }}
-          transition={{ delay: 3, stiffness: 50, type: "spring" }}
-        >
-          Hire Me!
-        </motion.button>
+        <Ripples>
+          <motion.button
+            className="btn bg-primary hover:bg-primaryDark"
+            initial={{ x: 1000 }}
+            animate={{ x: 0 }}
+            transition={{ delay: 3, stiffness: 50, type: "spring" }}
+          >
+            Hire Me!
+          </motion.button>
+        </Ripples>
       </div>
     </div>
   )

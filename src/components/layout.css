@@ -11,7 +11,7 @@ h3 {
 }
 
 .btn {
-  @apply py-2 px-10 lg:mt-20 rounded-3xl mt-16 lg:text-xl lg:px-16 lg:py-3 lg:rounded-full focus:outline-none transition-colors;
+  @apply py-2 px-10 rounded-3xl lg:text-xl lg:px-16 lg:py-3 lg:rounded-full focus:outline-none transition-colors;
 }
 
 .socialIcon {

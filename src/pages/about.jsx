@@ -9,9 +9,17 @@ const about = () => {
   return (
     <Layout>
       <Seo title="About" />
-      <HeaderTitles title="Know About Me" className="aboutTitle" />
+      <HeaderTitles
+        title="Know About Me"
+        className="aboutTitle"
+        transition={{ delay: 2 }}
+      />
       <AboutMe />
-      <HeaderTitles title="Skills" className="skillTitle mt-32" />
+      <HeaderTitles
+        title="Skills"
+        className="skillTitle mt-32"
+        transition={{ delay: 5.2 }}
+      />
       <Skills />
     </Layout>
   )
