@@ -3,7 +3,7 @@ import Skill from './Skill'
 
 const Skills = () => {
   return (
-    <div className="grid lg:grid-cols-2 gap-8 my-8">
+    <div className="grid lg:grid-cols-2 gap-8 lg:gap-x-32 my-8">
       <Skill skill="Html5" progress="97" className="w-97%" />
       <Skill skill="CSS3" progress="95" className="w-95%" />
       <Skill skill="Javascript" progress="90" className="w-90%" />

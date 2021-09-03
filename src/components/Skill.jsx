@@ -6,7 +6,7 @@ const Skill = ({skill, progress, className}) => {
     <AnimatePresence>
       <div className="flex items-start flex-col">
         <div className="w-full flex justify-center items-center space-x-2">
-          <div className="w-full lg:w-96 h-3 bg-gray-500 rounded-full">
+          <div className="w-full h-3 bg-gray-500 rounded-full">
             <div
               className={`${className ? className : ""} h-full bg-primary rounded-full`}
             ></div>
