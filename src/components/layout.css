@@ -11,11 +11,11 @@ h3 {
 }
 
 .btn {
-  @apply py-2 px-10 rounded-3xl lg:text-xl lg:px-16 lg:py-3 lg:rounded-full focus:outline-none transition-colors;
+  @apply px-10 py-2 transition-colors rounded-3xl lg:text-xl lg:px-16 lg:py-3 lg:rounded-full focus:outline-none;
 }
 
 .socialIcon {
-  @apply text-light hover:text-primary duration-300 transform-gpu hover:scale-125 transition-all;
+  @apply transition-all duration-300 text-light hover:text-primary transform-gpu hover:scale-125;
 }
 
 ul {
@@ -253,6 +253,31 @@ body {
 
 .leading-loose {
   line-height: 2 !important;
+}
+
+.textInput:hover::before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #da0037;
+  animation: widthIncrease 1s ease-in-out;
+  -webkit-animation: widthIncrease 1s ease-in-out;
+}
+
+.textInputArea:hover::before {
+  bottom: 7px;
+}
+
+@keyframes widthIncrease {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
