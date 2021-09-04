@@ -10,6 +10,7 @@ module.exports = {
         light: "#EDEDED",
         primary: "#DA0037",
         primaryDark: "#B8002E",
+        formDark: "#1e1e1e",
       },
       spacing: {
         "97%": "97%",
@@ -23,7 +24,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: { borderWidth: ["focus"] },
   },
   plugins: [],
 }
