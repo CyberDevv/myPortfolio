@@ -84,15 +84,14 @@ module.exports = {
       },
     },
     // `gatsby-plugin-sitemap`,
-    // {
-    //   resolve: `gatsby-source-strapi`,
-    //   options: {
-    //     apiURL: `http://localhost:1337`,
-    //     queryLimit: 1000, // Defaults to 100
-    //     collectionTypes: [`article`, `user`],
-    //     singleTypes: [`home-page`, `contact`],
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, 
+        collectionTypes: [`projects`],
+      },
+    },
     {
       resolve: "gatsby-plugin-load-script",
       options: {
