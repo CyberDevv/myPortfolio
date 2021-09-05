@@ -1,15 +1,14 @@
 import { motion } from "framer-motion"
 import React from "react"
 import Particles from "react-particles-js"
-
 import Hero from "../components/Hero"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <Seo title="Home" desc= "This is the home page" />
+    <Layout index>
+      <Seo title="Home" desc="This is the home page" />
       <motion.div
         className="md:hidden"
         initial={{ opacity: 0 }}
