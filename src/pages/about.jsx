@@ -8,7 +8,7 @@ import Skills from "../components/Skills"
 const about = () => {
   return (
     <Layout>
-      <Seo title="About" desc= "This is about me" />
+      <Seo title="About" desc="This is about me" />
       <HeaderTitles
         title="Know About Me"
         className="aboutTitle"

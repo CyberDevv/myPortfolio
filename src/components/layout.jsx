@@ -4,12 +4,14 @@ import "./layout.css"
 import NavBar from "./navBar"
 import Footer from "./Footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, index }) => {
   return (
-    <div className= "min-h-screen container mx-auto px-4 lg:px-0">
-      <NavBar />
-      {children}
-      <Footer />
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 md:px-8">
+        <NavBar />
+        {children}
+      </div>
+      {index || <Footer />}
     </div>
   )
 }
