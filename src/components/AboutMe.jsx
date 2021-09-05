@@ -6,15 +6,86 @@ import { MdEmail } from "react-icons/md"
 import { RiWhatsappFill, RiGithubFill, RiTwitterFill } from "react-icons/ri"
 
 const AboutMe = () => {
+  const container = {
+    hidden: { x: "-100vw" },
+    show: {
+      x: 0,
+      transition: {
+        delayChildren: 2,
+        staggerChildren: 0.5,
+        delay: 2.5,
+      },
+    },
+  }
+
+  const summary = {
+    hidden: { x: "-100vw" },
+    show: {
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: "50",
+      },
+    },
+  }
+
+  const divider = {
+    hidden: {
+      opacity: 0,
+      y: -100,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: "20",
+        damping: "3",
+        staggerChildren: 0.5,
+      },
+    },
+  }
+
+  const links = {
+    hidden: {
+      opacity: 0,
+      y: -100,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: "20",
+      },
+    },
+  }
+
+  const imageAnim = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: { duration: 2 },
+    },
+  }
+
   return (
-    <div className="lg:flex lg:justify-between lg:items-center">
+    <motion.div
+      className="lg:flex lg:justify-between lg:items-center"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       {/* Details*/}
+
       <div className="lg:w-1/2 divide-y-2 divide-opacity-20 divide-gray-100">
+        {/* Summary */}
+
         <motion.h3
-          className="mt-8 text-xs lg:text-sm tracking-widest leading-loose font-roboto"
-          initial={{ x: -1000 }}
-          animate={{ x: 0 }}
-          transition={{ delay: 2.5, type: "spring", stiffness: "50" }}
+          className="mt-8 text-xs sm:text-sm tracking-widest leading-loose font-roboto"
+          variants={summary}
         >
           I am a Front-End developer with more than 3+ years of experience in
           building websites and web applications. I specialize in JavaScript and
@@ -23,44 +94,20 @@ const AboutMe = () => {
           have experience working with TailwindCSS, JQuery, GatsbyJS and also
           NodeJS. You can checkout some of my projects.
         </motion.h3>
+
+        {/* Links */}
+
         <motion.div
-          className="mt-8 grid lg:grid-cols-2 gap-4 pt-8 font-roboto text-xs lg:text-sm"
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 2.8,
-            type: "spring",
-            stiffness: "20",
-            damping: "3",
-          }}
+          className="mt-8 grid sm:grid-cols-2 gap-4 pt-8 font-roboto text-xs sm:text-sm"
+          variants={divider}
         >
-          <motion.h4
-            className="flex items-center"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 3,
-              type: "spring",
-              stiffness: "20",
-              damping: "3",
-            }}
-          >
-            <FaUserAlt className="text-base" />:{" "}
+          <motion.h4 className="flex items-center" variants={links}>
+            <FaUserAlt className="text-base" />:
             <span className="ml-2">Ibrahim Odesola</span>
           </motion.h4>
 
           {/* Email */}
-          <motion.h4
-            className="flex items-center"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 3.2,
-              type: "spring",
-              stiffness: "20",
-              damping: "3",
-            }}
-          >
+          <motion.h4 className="flex items-center" variants={links}>
             <MdEmail className="text-lg" />:
             <a
               className="ml-2"
@@ -73,17 +120,7 @@ const AboutMe = () => {
           </motion.h4>
 
           {/* Whatsapp */}
-          <motion.h4
-            className="flex items-center"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 3.4,
-              type: "spring",
-              stiffness: "20",
-              damping: "3",
-            }}
-          >
+          <motion.h4 className="flex items-center" variants={links}>
             <RiWhatsappFill className="text-lg" />:
             <a
               className="ml-2"
@@ -96,17 +133,7 @@ const AboutMe = () => {
           </motion.h4>
 
           {/* github */}
-          <motion.h4
-            className="flex items-center"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 3.6,
-              type: "spring",
-              stiffness: "20",
-              damping: "3",
-            }}
-          >
+          <motion.h4 className="flex items-center" variants={links}>
             <RiGithubFill className="text-lg" />:
             <a
               className="ml-2"
@@ -119,17 +146,7 @@ const AboutMe = () => {
           </motion.h4>
 
           {/* Twitter */}
-          <motion.h4
-            className="flex items-center"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 3.8,
-              type: "spring",
-              stiffness: "20",
-              damping: "3",
-            }}
-          >
+          <motion.h4 className="flex items-center" variants={links}>
             <RiTwitterFill className="text-lg" />:
             <a
               className="ml-2"
@@ -144,12 +161,8 @@ const AboutMe = () => {
       </div>
 
       {/* Images Section */}
-      <motion.div
-        className="lg:w-1/2 mt-32 lg:mt-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 4.3, duration: 2 }}
-      >
+
+      <motion.div className="lg:w-1/2 mt-32 lg:mt-0" variants={imageAnim}>
         <div>
           <div className="relative flex justify-center items-center">
             <StaticImage
@@ -223,8 +236,6 @@ const AboutMe = () => {
                 {/* Redux */}
                 <i className="planetCircle -right-4 lg:-right-6">
                   <svg
-                    width="40"
-                    height="40"
                     viewBox="0 0 256 244"
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="xMidYMid"
@@ -241,8 +252,6 @@ const AboutMe = () => {
                 {/* NodeJS */}
                 <i className="planetCircle -left-8 lg:-left-14">
                   <svg
-                    width="40"
-                    height="40"
                     viewBox="0 0 256 282"
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="xMinYMin meet"
@@ -272,7 +281,7 @@ const AboutMe = () => {
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 
