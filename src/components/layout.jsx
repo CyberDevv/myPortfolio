@@ -7,7 +7,7 @@ import Footer from "./Footer"
 const Layout = ({ children, index }) => {
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-4">
         <NavBar />
         {children}
       </div>
