@@ -9,7 +9,7 @@ import Seo from "../components/seo"
 const IndexPage = () => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Home" desc= "This is the home page" />
       <motion.div
         className="md:hidden"
         initial={{ opacity: 0 }}

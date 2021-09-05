@@ -7,7 +7,7 @@ import Project from '../components/Projects'
 const project = () => {
   return (
     <Layout>
-      <Seo title="Projects" />
+      <Seo title="Projects" desc= "This is the project page" />
       <HeaderTitles title="Projects" className="projectTitle mb-16" />
       <Project />
     </Layout>

@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
     title: `Ibrahim Odesola`,
-    description: `I am Ibrahim Odesola, a Frond-End Developer with 2+ years of experience. I use ReactJS, GatsbyJS and also TailwindCSS. Also I'm free for hiring.`,
+    description: `This is my portfolio site, where you can find some informations about me, contact me and also some projects I've worked on or built.`,
     author: `@CyberDevv`,
+    twitterUsername: `@CyberDevv`,
+    image: `/myPortfolio.png`,
+    siteUrl: `https://ibrahim-odesola.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,9 +21,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -57,9 +62,6 @@ module.exports = {
         cookieDomain: "example.com",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
@@ -83,12 +85,11 @@ module.exports = {
         },
       },
     },
-    // `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
-        queryLimit: 1000, 
+        queryLimit: 1000,
         collectionTypes: [`projects`],
       },
     },

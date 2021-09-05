@@ -1,14 +1,13 @@
 import React from "react"
-import FormInput from "../components/FormInput"
 import HeaderTitles from "../components/HeaderTitles"
 import Layout from "../components/layout"
-import Ripples from "react-ripples"
 import Seo from "../components/seo"
+import ContactForm from "../components/ContactForm"
 
 const contact = () => {
   return (
     <Layout>
-      <Seo title="Contact" />
+      <Seo title="Contact" desc= "This is the contact page" />
       <HeaderTitles title="Get In Touch" className="contactTitle" />
 
       <div>
@@ -972,29 +971,7 @@ const contact = () => {
             </h6>
 
             {/* Form */}
-            <form className="flex flex-col items-center mt-6 space-y-4 text-gray-300">
-              <div className="flex w-full space-x-4">
-                <FormInput label="Name" type="text" />
-                <FormInput label="Email" type="email" />
-              </div>
-              <FormInput label="Subject" type="text" />
-              <div className="relative w-full textInput textInputArea">
-                <textarea
-                  className="w-full p-4 placeholder-gray-400 rounded focus:border-b-2 focus:border-primary bg-formDark focus:outline-none"
-                  name=""
-                  id=""
-                  rows="5"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <Ripples>
-                <button type= "submit"
-                  className="btn bg-primary hover:bg-primaryDark"
-                >
-                  Send Message
-                </button>
-              </Ripples>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
