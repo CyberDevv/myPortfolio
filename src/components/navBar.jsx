@@ -7,7 +7,7 @@ import SocialLink from "../constants/socialLinks"
 import Particles from "react-particles-js"
 
 const NavBar = () => {
-  const [navBarOpened, isNavBarOpened] = useState(true)
+  const [navBarOpened, isNavBarOpened] = useState(false)
   const container = {
     hidden: { x: "-100vw" },
     show: {
