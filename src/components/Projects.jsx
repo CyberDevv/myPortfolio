@@ -33,7 +33,7 @@ const query = graphql`
         Placeholder {
           localFile {
             childImageSharp {
-              fluid {
+              fluid(fit: CONTAIN) {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
             }

@@ -7,12 +7,12 @@ import ContactForm from "../components/ContactForm"
 const contact = () => {
   return (
     <Layout>
-      <Seo title="Contact" desc= "This is the contact page" />
+      <Seo title="Contact" desc="This is the contact page" />
       <HeaderTitles title="Get In Touch" className="contactTitle" />
 
-      <div>
-        <div className="flex items-center justify-center space-x-8">
-          <div className="lg:w-1/2">
+      <div className= "flex justify-center items-center" style= {{"min-height": "83vh"}}>
+        <div className="flex flex-col items-center justify-center space-x-0 lg:flex-row lg:space-x-8">
+          <div className="w-full py-8 lg:py-0 lg:w-1/2">
             <i>
               <svg data-name="Layer 1" viewBox="0 0 1096 574.74">
                 <defs>
@@ -963,8 +963,8 @@ const contact = () => {
               </svg>
             </i>
           </div>
-          <div className="lg:w-1/2">
-            <h6 className="px-4 text-sm tracking-widest text-gray-300 capitalize border-l-4 border-primary">
+          <div className="w-full py-8 lg:w-1/2 lg:py-0">
+            <h6 className="px-4 text-xs tracking-widest text-gray-300 capitalize border-l-4 sm:text-sm border-primary">
               I’m interested in freelance opportunities – especially ambitious
               or large projects. However, if you have other request or question,
               don’t hesitate to use the form.

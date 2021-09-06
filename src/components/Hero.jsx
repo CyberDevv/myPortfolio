@@ -6,7 +6,7 @@ import SocialLinks from "../constants/socialLinks"
 
 const Hero = () => {
   return (
-    <div className="hero flex flex-col lg:flex-row w-full items-center justify-center tracking-widest">
+    <div className="hero flex flex-col lg:flex-row w-full items-center justify-center tracking-widest py-52 md:py-0">
       {/* Section one */}
       <div className="lg:w-7/12 w-full text-center z-10">
         {/* Title */}
@@ -69,6 +69,7 @@ const Hero = () => {
         {/* Hire me button */}
 
         <motion.div
+        className= "rounded-3xl overflow-hidden mb-2q"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 3, stiffness: 50, type: "spring" }}

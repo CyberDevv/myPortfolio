@@ -13,7 +13,7 @@ const ContactForm = () => {
       className="flex flex-col items-center mt-6 space-y-4 text-gray-300"
       onSubmit={handleSubmit}
     >
-      <div className="flex w-full space-x-4">
+      <div className="flex flex-col sm:flex-row w-full space-y-4 sm:space-x-0 sm:space-x-4">
         <FormInput label="Name" type="text" name="name" />
         <FormInput label="Email" type="email" name="email" />
         <ValidationError prefix="Email" field="email" errors={state.errors} />

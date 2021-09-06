@@ -1,5 +1,5 @@
 import React from "react"
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 
 const Project = ({
@@ -11,7 +11,6 @@ const Project = ({
   Placeholder,
   index,
 }) => {
-
   return (
     <div className="project">
       <Img
@@ -20,13 +19,11 @@ const Project = ({
         className="project-img"
       />
       <div className="project-info py-4">
-        <h3 className="text-primary capiterlize tracking-wider">
-          {Title}
-        </h3>
+        <h3 className="text-primary capiterlize tracking-wider">{Title}</h3>
         <p className="project-desc">{Description}</p>
         <div className="project-stack mt-4">
           {TechnologyUsed.map(item => {
-            return <span key={item.id}>{item.input}</span>
+            return <span className= "my-1" key={item.id}>{item.input}</span>
           })}
         </div>
         <div className="flex items-center">
