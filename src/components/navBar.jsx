@@ -7,7 +7,18 @@ import SocialLink from "../constants/socialLinks"
 import Particles from "react-particles-js"
 
 const NavBar = () => {
-  const [navBarOpened, isNavBarOpened] = useState(false)
+  const [navBarOpened, isNavBarOpened] = useState(true)
+  const container = {
+    hidden: { x: "-100vw" },
+    show: {
+      x: 0,
+      transition: {
+        delay: 0.5,
+        // staggerChildren: 5,
+        // delayChildren: 4,
+      },
+    },
+  }
   return (
     <nav>
       <div className="flex items-center py-4 lg:py-8 lg:space-x-32">
@@ -137,18 +148,14 @@ const NavBar = () => {
                   styleClass="flex flex-col justify-center items-center uppercase font-bold text-xl tracking-widest leading-10 space-y-8"
                   linkStyle=""
                   activeStyleClass="mobileActive relative"
-                  initial={{ x: "-100vw" }}
-                  animate={{ x: 0 }}
-                  transition={{
-                    delay: 0.5,
-                  }}
+                  variants={container}
                 ></PageLinks>
                 <SocialLink
                   styleClass="flex justify-evenly text-xl text-2xl w-full"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: 1,
+                    delay: 1.5,
                     stiffness: 50,
                     damping: 5,
                     type: "spring",

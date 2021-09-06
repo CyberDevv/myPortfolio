@@ -25,6 +25,17 @@ const data = [
   },
 ]
 
+const item = {
+  hidden: { x: "-100vw" },
+  show: {
+    x: 0,
+    transition: {
+      delay: 2,
+      duration: 3
+    },
+  },
+}
+
 const PageLinks = ({
   styleClass,
   linkStyle,
@@ -32,17 +43,23 @@ const PageLinks = ({
   initial,
   animate,
   transition,
+  variants,
 }) => {
   return (
     <motion.ul
       className={`${styleClass ? styleClass : ""}`}
-      initial={initial}
-      animate={animate}
-      transition={transition}
+      initial="hidden"
+      animate="show"
+      variants={variants}
     >
       {data.map(link => {
         return (
-          <li key={link.id}>
+          <motion.li
+            key={link.id}
+            initial={{ x: "-100vw" }}
+            animate={{ x: 0 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: "50" }}
+          >
             <Link
               className={`${linkStyle ? linkStyle : ""}`}
               activeClassName={`${activeStyleClass ? activeStyleClass : ""}`}
@@ -50,7 +67,7 @@ const PageLinks = ({
             >
               {link.text}
             </Link>
-          </li>
+          </motion.li>
         )
       })}
     </motion.ul>
