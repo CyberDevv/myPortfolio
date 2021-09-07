@@ -20,9 +20,9 @@ const NavBar = () => {
     },
   }
   return (
-    <nav>
-      <div className="flex items-center py-4 lg:py-8 lg:space-x-32">
-        <div className="flex justify-between items-center flex-grow lg:flex-grow-0 z-10">
+    <nav className="navBar">
+      <div className="container flex items-center px-4 py-4 mx-auto lg:py-8 lg:space-x-32 navBarDecendant">
+        <div className="z-10 flex items-center justify-between flex-grow lg:flex-grow-0">
           {/* Logo */}
           <motion.h4
             className="text-xl font-bold"
@@ -36,7 +36,7 @@ const NavBar = () => {
           {/* NavToggler */}
           <motion.button
             type="button"
-            className="text-xl bg-transparent transition-colors cursor-pointer focus:outline-none lg:hidden"
+            className="text-xl transition-colors bg-transparent cursor-pointer focus:outline-none lg:hidden"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
@@ -64,13 +64,13 @@ const NavBar = () => {
         <AnimatePresence>
           {navBarOpened && (
             <motion.div
-              className="fixed top-0 left-0 h-screen w-full bg-darker z-50 text-gray-200"
+              className="fixed top-0 left-0 z-50 w-full h-screen text-gray-200 bg-darker"
               animate={{ x: 0 }}
               initial={{ x: "-100vw" }}
               exit={{ x: "-100vw" }}
             >
               <Particles
-                className="absolute top-0 left-0 h-screen w-full"
+                className="absolute top-0 left-0 w-full h-screen"
                 params={{
                   detectRetina: true,
                   fpsLimit: 60,
@@ -141,9 +141,9 @@ const NavBar = () => {
                 className="focus:outline-none"
                 onClick={() => isNavBarOpened(!navBarOpened)}
               >
-                <AiOutlineCloseCircle className="text-3xl absolute top-4 right-4" />
+                <AiOutlineCloseCircle className="absolute text-3xl top-4 right-4" />
               </button>
-              <div className="flex justify-center items-center h-full flex-col space-y-16">
+              <div className="flex flex-col items-center justify-center h-full space-y-16">
                 <PageLinks
                   styleClass="flex flex-col justify-center items-center uppercase font-bold text-xl tracking-widest leading-10 space-y-8"
                   linkStyle=""
