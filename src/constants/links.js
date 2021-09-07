@@ -25,24 +25,10 @@ const data = [
   },
 ]
 
-const item = {
-  hidden: { x: "-100vw" },
-  show: {
-    x: 0,
-    transition: {
-      delay: 2,
-      duration: 3
-    },
-  },
-}
-
 const PageLinks = ({
   styleClass,
   linkStyle,
   activeStyleClass,
-  initial,
-  animate,
-  transition,
   variants,
 }) => {
   return (

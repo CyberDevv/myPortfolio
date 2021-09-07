@@ -15,12 +15,6 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: ["gatsby-remark-lottie"],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
