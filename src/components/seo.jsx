@@ -30,7 +30,6 @@ function SEO({ desc, meta, title }) {
         },
         {
           property: `og:description`,
-          content: description,
         },
         {
           property: `og:type`,

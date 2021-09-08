@@ -1,5 +1,4 @@
 import React from "react"
-import { motion } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaUserAlt } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
@@ -72,7 +71,7 @@ const AboutMe = () => {
   }
 
   return (
-    <motion.div
+    <div
       className="lg:flex lg:justify-between lg:items-center"
       variants={container}
       initial="hidden"
@@ -83,7 +82,7 @@ const AboutMe = () => {
       <div className="lg:w-1/2 divide-y-2 divide-opacity-20 divide-gray-100">
         {/* Summary */}
 
-        <motion.h3
+        <h3
           className="mt-8 text-xs sm:text-sm tracking-widest leading-loose font-roboto"
           variants={summary}
         >
@@ -93,21 +92,21 @@ const AboutMe = () => {
           functional, aesthetic websites that users can interact with. I also
           have experience working with TailwindCSS, JQuery, GatsbyJS and also
           NodeJS. You can checkout some of my projects.
-        </motion.h3>
+        </h3>
 
         {/* Links */}
 
-        <motion.div
+        <div
           className="mt-8 grid sm:grid-cols-2 gap-4 pt-8 font-roboto text-xs sm:text-sm"
           variants={divider}
         >
-          <motion.h4 className="flex items-center" variants={links}>
+          <h4 className="flex items-center" variants={links}>
             <FaUserAlt className="text-base" />:
             <span className="ml-2">Ibrahim Odesola</span>
-          </motion.h4>
+          </h4>
 
           {/* Email */}
-          <motion.h4 className="flex items-center" variants={links}>
+          <h4 className="flex items-center" variants={links}>
             <MdEmail className="text-lg" />:
             <a
               className="ml-2"
@@ -117,10 +116,10 @@ const AboutMe = () => {
             >
               tocyberdevv@gmail.com
             </a>
-          </motion.h4>
+          </h4>
 
           {/* Whatsapp */}
-          <motion.h4 className="flex items-center" variants={links}>
+          <h4 className="flex items-center" variants={links}>
             <RiWhatsappFill className="text-lg" />:
             <a
               className="ml-2"
@@ -130,10 +129,10 @@ const AboutMe = () => {
             >
               +2348072534558
             </a>
-          </motion.h4>
+          </h4>
 
           {/* github */}
-          <motion.h4 className="flex items-center" variants={links}>
+          <h4 className="flex items-center" variants={links}>
             <RiGithubFill className="text-lg" />:
             <a
               className="ml-2"
@@ -143,10 +142,10 @@ const AboutMe = () => {
             >
               github.com/CyberDevv
             </a>
-          </motion.h4>
+          </h4>
 
           {/* Twitter */}
-          <motion.h4 className="flex items-center" variants={links}>
+          <h4 className="flex items-center" variants={links}>
             <RiTwitterFill className="text-lg" />:
             <a
               className="ml-2"
@@ -156,13 +155,13 @@ const AboutMe = () => {
             >
               twitter.com/CyberDevv
             </a>
-          </motion.h4>
-        </motion.div>
+          </h4>
+        </div>
       </div>
 
       {/* Images Section */}
 
-      <motion.div className="lg:w-1/2 mt-32 lg:mt-0" variants={imageAnim}>
+      <div className="lg:w-1/2 mt-32 lg:mt-0" variants={imageAnim}>
         <div>
           <div className="relative flex justify-center items-center">
             <StaticImage
@@ -275,8 +274,8 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   )
 }
 

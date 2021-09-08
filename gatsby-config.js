@@ -22,13 +22,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `json`,
-        path: `${__dirname}/src/json`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ibrahim Odesola`,
@@ -75,14 +68,14 @@ module.exports = {
         postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: false,
-    //     develop: false,
-    //     tailwind: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false,
+        develop: true,
+        tailwind: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

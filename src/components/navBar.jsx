@@ -24,17 +24,17 @@ const NavBar = () => {
       <div className="container flex items-center px-4 py-4 mx-auto lg:py-8 lg:space-x-32 navBarDecendant">
         <div className="z-10 flex items-center justify-between flex-grow lg:flex-grow-0">
           {/* Logo */}
-          <motion.h4
+          <h4
             className="text-xl font-bold"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ type: "spring", stiffness: 50 }}
           >
             IO
-          </motion.h4>
+          </h4>
 
           {/* NavToggler */}
-          <motion.button
+          <button
             type="button"
             className="text-xl transition-colors bg-transparent cursor-pointer focus:outline-none lg:hidden"
             initial={{ y: -100 }}
@@ -43,7 +43,7 @@ const NavBar = () => {
             onClick={() => isNavBarOpened(!navBarOpened)}
           >
             <FaAlignRight />
-          </motion.button>
+          </button>
         </div>
 
         {/* navMenu */}
@@ -63,7 +63,7 @@ const NavBar = () => {
         {/* mobile NavMenu */}
         <AnimatePresence>
           {navBarOpened && (
-            <motion.div
+            <div
               className="fixed top-0 left-0 z-50 w-full h-screen text-gray-200 bg-darker"
               animate={{ x: 0 }}
               initial={{ x: "-100vw" }}
@@ -162,7 +162,7 @@ const NavBar = () => {
                   }}
                 />
               </div>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>
