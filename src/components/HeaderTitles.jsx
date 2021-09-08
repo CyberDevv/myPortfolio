@@ -1,9 +1,8 @@
 import React from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 const HeaderTitles = ({ title, className, transition }) => {
   return (
-    <AnimatePresence>
       <motion.h1
         className={` ${
           className ? className : ""
@@ -15,7 +14,6 @@ const HeaderTitles = ({ title, className, transition }) => {
       >
         {title}
       </motion.h1>
-    </AnimatePresence>
   )
 }
 

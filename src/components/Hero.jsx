@@ -1,6 +1,5 @@
 import React from "react"
 import Ripples from "react-ripples"
-import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
 
@@ -10,23 +9,23 @@ const Hero = () => {
       {/* Section one */}
       <div className="lg:w-7/12 w-full text-center z-10">
         {/* Title */}
-        <motion.h5
+        <h5
           className="sm:text-lg lg:text-xl"
           initial={{ x: '-100vw' }}
           animate={{ x: 0 }}
           transition={{ delay: 2, stiffness: 50, type: "spring" }}
         >
           Front-End Developer
-        </motion.h5>
+        </h5>
 
         {/* Divider */}
 
-        <motion.div
+        <div
           className="bg-gray-200 w-full h-px my-8"
           initial={{ x: '-100vw' }}
           animate={{ x: 0 }}
           transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
-        ></motion.div>
+        ></div>
 
         {/* Social Links */}
         
@@ -46,29 +45,29 @@ const Hero = () => {
       {/* section two */}
       <div className="lg:w-5/12 flex flex-col items-center justify-center mt-16 lg:mt-0 z-10">
         {/* Greeting Text */}
-        <motion.h1
+        <h1
           className="text-6xl sm:text-7xl lg:text-8xl font-bold"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 2, stiffness: 50, type: "spring" }}
         >
           Hell<span className="text-primary">o</span>,
-        </motion.h1>
+        </h1>
 
         {/* Introduction */}
         
-        <motion.h4
+        <h4
           className="text-3xl sm:text-4xl lg:text-5xl mt-4 lg:mt-6 lg:mb-20 mb-16"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
         >
           I am Ibrahim
-        </motion.h4>
+        </h4>
 
         {/* Hire me button */}
 
-        <motion.div
+        <div
         className= "rounded-3xl overflow-hidden mb-2q"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
@@ -79,7 +78,7 @@ const Hero = () => {
               Hire Me!
             </Link>
           </Ripples>
-        </motion.div>
+        </div>
       </div>
     </div>
   )
