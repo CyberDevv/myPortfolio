@@ -77,29 +77,6 @@ const NavBar = () => {
     final: { x: 0 },
   }
 
-  const navSocialLinkVariants = {
-    initial: { y: "-100vh" },
-    final: {
-      y: 0,
-      transition: {
-        staggerChildren: 0.5,
-      },
-    },
-  }
-
-  const navSocialLinkChildrenVariants = {
-    initial: { opacity: 0, y: -100 },
-    final: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 70,
-        mass: 0.6,
-      },
-    },
-  }
-
   return (
     <motion.nav
       className="navBar"
@@ -237,8 +214,6 @@ const NavBar = () => {
 
                 <SocialLink
                   styleClass="list-none flex justify-evenly text-xl text-2xl w-full"
-                  variants={navSocialLinkVariants}
-                  variants2={navSocialLinkChildrenVariants}
                 />
               </div>
             </motion.div>
