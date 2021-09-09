@@ -2,14 +2,14 @@ import { motion } from "framer-motion"
 import React from "react"
 
 const Skill = ({ skill, progress, className }) => {
-  const item = {
-    hidden: { x: "-100vw" },
-    show: { x: 0 },
+  const skillVariant = {
+    initial: { x: "-100vw" },
+    final: { x: 0 },
   }
 
   const bar = {
-    hidden: { width: 0 },
-    show: {
+    initial: { width: 0 },
+    final: {
       width: "100%",
       transition: {
         duration: 3,
@@ -18,8 +18,8 @@ const Skill = ({ skill, progress, className }) => {
   }
 
   const progressBar = {
-    hidden: { width: 0 },
-    show: {
+    initial: { width: 0 },
+    final: {
       width: "100%",
       transition: {
         duration: 3,
@@ -27,7 +27,7 @@ const Skill = ({ skill, progress, className }) => {
     },
   }
   return (
-    <motion.div className="flex items-start flex-col" variants={item}>
+    <motion.div className="flex items-start flex-col" variants={skillVariant}>
       <div className="w-full flex justify-start items-center space-x-2">
         <motion.div
           className="w-full h-3 bg-gray-500 rounded-full"

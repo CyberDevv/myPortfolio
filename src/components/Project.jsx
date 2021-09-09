@@ -1,6 +1,12 @@
 import React from "react"
 import Img from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
+import { motion } from "framer-motion"
+
+const projectVarinat = {
+  initial: {opacity: 0},
+  final: {opacity: 1}
+}
 
 const Project = ({
   Title,
@@ -12,7 +18,7 @@ const Project = ({
   index,
 }) => {
   return (
-    <div className="project">
+    <motion.div className="project" variants= {projectVarinat}>
       <Img
         fluid={Placeholder.localFile.childImageSharp.fluid}
         alt={Title}
@@ -45,7 +51,7 @@ const Project = ({
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,87 +1,91 @@
 import React from "react"
-import { motion } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaUserAlt } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 import { RiWhatsappFill, RiGithubFill, RiTwitterFill } from "react-icons/ri"
+import { motion } from "framer-motion"
+
+const aboutMeVariant = {
+  initial: { x: "-100vw" },
+  final: { x: 0 },
+}
+
+const summary = {
+  initial: { x: "-100vw" },
+  final: {
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      mass: 0.6,
+    },
+  },
+}
+
+const divider = {
+  initial: {
+    opacity: 0,
+    y: -100,
+  },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      mass: 0.6,
+      staggerChildren: 0.5,
+      when: "beforeChildren",
+      delay: 1,
+    },
+  },
+}
+
+const links = {
+  initial: {
+    opacity: 0,
+    y: -100,
+  },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: "20",
+    },
+  },
+}
+
+const imageAnim = {
+  initial: {
+    opacity: 0,
+  },
+  final: {
+    opacity: 1,
+    transition: { delay: 2.5, staggerChildren: 0.5, when: "beforeChildren" },
+  },
+}
+
+const imageVarinat = {
+  initial: { opacity: 0 },
+  final: { opacity: 1 },
+}
+
+const imageParentVarinat = {
+  initial: { opacity: 0 },
+  final: { opacity: 1, transition: {staggerChildren: 0.5, when: "beforeChildren"} },
+}
 
 const AboutMe = () => {
-  const container = {
-    hidden: { x: "-100vw" },
-    show: {
-      x: 0,
-      transition: {
-        delayChildren: 2,
-        staggerChildren: 0.5,
-        delay: 2.5,
-      },
-    },
-  }
-
-  const summary = {
-    hidden: { x: "-100vw" },
-    show: {
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: "50",
-      },
-    },
-  }
-
-  const divider = {
-    hidden: {
-      opacity: 0,
-      y: -100,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: "20",
-        damping: "3",
-        staggerChildren: 0.5,
-      },
-    },
-  }
-
-  const links = {
-    hidden: {
-      opacity: 0,
-      y: -100,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: "20",
-      },
-    },
-  }
-
-  const imageAnim = {
-    hidden: {
-      opacity: 0,
-    },
-    show: {
-      opacity: 1,
-      transition: { duration: 2 },
-    },
-  }
-
   return (
     <motion.div
       className="lg:flex lg:justify-between lg:items-center"
-      variants={container}
-      initial="hidden"
-      animate="show"
+      variants={aboutMeVariant}
     >
       {/* Details*/}
 
       <div className="lg:w-1/2 divide-y-2 divide-opacity-20 divide-gray-100">
-        {/* Summary */}
+        {/*ANCHOR Summary */}
 
         <motion.h3
           className="mt-8 text-xs sm:text-sm tracking-widest leading-loose font-roboto"
@@ -95,7 +99,7 @@ const AboutMe = () => {
           NodeJS. You can checkout some of my projects.
         </motion.h3>
 
-        {/* Links */}
+        {/* ANCHOR Links */}
 
         <motion.div
           className="mt-8 grid sm:grid-cols-2 gap-4 pt-8 font-roboto text-xs sm:text-sm"
@@ -160,22 +164,30 @@ const AboutMe = () => {
         </motion.div>
       </div>
 
-      {/* Images Section */}
+      {/* ANCHOR Images Section */}
 
       <motion.div className="lg:w-1/2 mt-32 lg:mt-0" variants={imageAnim}>
         <div>
           <div className="relative flex justify-center items-center">
-            <StaticImage
-              src="../images/myImage.jpg"
-              alt="myImage"
-              className="rounded-full myIMage h-60 w-60 xl:h-80 xl:w-80"
-              placeholder="tracedSVG"
-            />
+            <motion.div variants={imageVarinat}>
+              <StaticImage
+                src="../images/myImage.jpg"
+                alt="myImage"
+                className="rounded-full myIMage h-60 w-60 xl:h-80 xl:w-80"
+                placeholder="tracedSVG"
+              />
+            </motion.div>
 
             {/* InnerCircle */}
-            <div class="absolute innerCircle">
-              {/* ReactJS */}
-              <i className="planetCircle -left-4 lg:-left-6">
+            <motion.div
+              class="absolute innerCircle"
+              variants={imageParentVarinat}
+            >
+              {/* ANCHOR ReactJS */}
+              <motion.i
+                className="planetCircle -left-4 lg:-left-6"
+                variants={imageVarinat}
+              >
                 <svg
                   preserveAspectRatio="xMidYMid"
                   version="1.1"
@@ -199,22 +211,28 @@ const AboutMe = () => {
                     fill="#53C1DE"
                   />
                 </svg>
-              </i>
+              </motion.i>
 
-              {/* Github */}
-              <img
+              {/* ANCHOR Github */}
+              <motion.img
+                variants={imageVarinat}
                 className="planetCircle -right-4 lg:-right-6"
                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="
                 alt="github"
               />
-            </div>
+            </motion.div>
 
             {/* OuterCircle */}
-            <div class="absolute outerCircle flex-col">
+            <motion.div
+              class="absolute outerCircle flex-col"
+              variants={imageParentVarinat}
+            >
               <div className="flex justify-between items-center w-full">
-                {/* TailwindCSS */}
-                <i className="planetCircle -left-4 lg:-left-6 p-1">
-                  {" "}
+                {/*ANCHOR TailwindCSS */}
+                <motion.i
+                  className="planetCircle -left-4 lg:-left-6 p-1"
+                  variants={imageVarinat}
+                >
                   <svg
                     preserveAspectRatio="xMidYMid"
                     xmlns="http://www.w3.org/2000/svg"
@@ -229,10 +247,13 @@ const AboutMe = () => {
                       fill="url(#a)"
                     />
                   </svg>{" "}
-                </i>
+                </motion.i>
 
-                {/* Redux */}
-                <i className="planetCircle -right-4 lg:-right-6 p-1">
+                {/* ANCHOR Redux */}
+                <motion.i
+                  className="planetCircle -right-4 lg:-right-6 p-1"
+                  variants={imageVarinat}
+                >
                   <svg viewBox="0 0 100 100">
                     <g fill="#764ABC">
                       <path d="M65.6 65.4c2.9-.3 5.1-2.8 5-5.8-.1-3-2.6-5.4-5.6-5.4h-.2c-3.1.1-5.5 2.7-5.4 5.8.1 1.5.7 2.8 1.6 3.7-3.4 6.7-8.6 11.6-16.4 15.7-5.3 2.8-10.8 3.8-16.3 3.1-4.5-.6-8-2.6-10.2-5.9-3.2-4.9-3.5-10.2-.8-15.5 1.9-3.8 4.9-6.6 6.8-8-.4-1.3-1-3.5-1.3-5.1-14.5 10.5-13 24.7-8.6 31.4 3.3 5 10 8.1 17.4 8.1 2 0 4-.2 6-.7 12.8-2.5 22.5-10.1 28-21.4z" />
@@ -240,12 +261,15 @@ const AboutMe = () => {
                       <path d="M32.4 67.1c.1 3 2.6 5.4 5.6 5.4h.2c3.1-.1 5.5-2.7 5.4-5.8-.1-3-2.6-5.4-5.6-5.4h-.2c-.2 0-.5 0-.7.1-4.1-6.8-5.8-14.2-5.2-22.2.4-6 2.4-11.2 5.9-15.5 2.9-3.7 8.5-5.5 12.3-5.6 10.6-.2 15.1 13 15.4 18.3 1.3.3 3.5 1 5 1.5-1.2-16.2-11.2-24.6-20.8-24.6-9 0-17.3 6.5-20.6 16.1-4.6 12.8-1.6 25.1 4 34.8-.5.7-.8 1.8-.7 2.9z" />
                     </g>
                   </svg>
-                </i>
+                </motion.i>
               </div>
 
               <div className="flex justify-between items-center w-full transform rotate-90">
-                {/* NodeJS */}
-                <i className="planetCircle -left-8 lg:-left-14 p-1">
+                {/* ANCHOR NodeJS */}
+                <motion.i
+                  className="planetCircle -left-8 lg:-left-14 p-1"
+                  variants={imageVarinat}
+                >
                   <svg
                     viewBox="0 0 256 282"
                     xmlns="http://www.w3.org/2000/svg"
@@ -256,10 +280,10 @@ const AboutMe = () => {
                       <path d="M146.928 85.99c15.21-.979 31.493-.58 45.18 6.913 10.597 5.742 16.472 17.793 16.659 29.566-.296 1.588-1.956 2.464-3.472 2.355-4.413-.006-8.827.06-13.24-.03-1.872.072-2.96-1.654-3.195-3.309-1.268-5.633-4.34-11.212-9.642-13.929-8.139-4.075-17.576-3.87-26.451-3.785-6.479.344-13.446.905-18.935 4.715-4.214 2.886-5.494 8.712-3.99 13.404 1.418 3.369 5.307 4.456 8.489 5.458 18.33 4.794 37.754 4.317 55.734 10.626 7.444 2.572 14.726 7.572 17.274 15.366 3.333 10.446 1.872 22.932-5.56 31.318-6.027 6.901-14.805 10.657-23.56 12.697-11.647 2.597-23.734 2.663-35.562 1.51-11.122-1.268-22.696-4.19-31.282-11.768-7.342-6.375-10.928-16.308-10.572-25.895.085-1.619 1.697-2.748 3.248-2.615 4.444-.036 8.888-.048 13.332.006 1.775-.127 3.091 1.407 3.182 3.08.82 5.367 2.837 11 7.517 14.182 9.032 5.827 20.365 5.428 30.707 5.591 8.568-.38 18.186-.495 25.178-6.158 3.689-3.23 4.782-8.634 3.785-13.283-1.08-3.925-5.186-5.754-8.712-6.95-18.095-5.724-37.736-3.647-55.656-10.12-7.275-2.571-14.31-7.432-17.105-14.906-3.9-10.578-2.113-23.662 6.098-31.765 8.006-8.06 19.563-11.164 30.551-12.275z" />
                     </g>
                   </svg>
-                </i>
+                </motion.i>
 
-                {/* Gatsby */}
-                <i className="planetCircle">
+                {/*ANCHOR Gatsby */}
+                <motion.i className="planetCircle" variants={imageVarinat}>
                   <svg
                     enable-background="new 0 0 2500 2500"
                     viewBox="0 0 2500 2500"
@@ -270,9 +294,9 @@ const AboutMe = () => {
                       fill="#744c9e"
                     />
                   </svg>
-                </i>
+                </motion.i>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>
