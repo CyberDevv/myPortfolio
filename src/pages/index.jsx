@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Particles from "react-particles-js"
 import Hero from "../components/Hero"
 import Layout from "../components/layout"
@@ -35,15 +35,14 @@ const IndexPage = () => {
   }
 
   // UseState Hook
-  const [loading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  // useEffect Hook
-  // useEffect(() => {
-  //   setLoading(true)
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 3000)
-  // }, [])
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }, [])
 
   return (
     <>
