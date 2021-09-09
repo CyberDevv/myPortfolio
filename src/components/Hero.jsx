@@ -11,7 +11,7 @@ const Hero = () => {
         {/* Title */}
         <h5
           className="sm:text-lg lg:text-xl"
-          initial={{ x: '-100vw' }}
+          initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
           transition={{ delay: 2, stiffness: 50, type: "spring" }}
         >
@@ -22,15 +22,15 @@ const Hero = () => {
 
         <div
           className="bg-gray-200 w-full h-px my-8"
-          initial={{ x: '-100vw' }}
+          initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
           transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
         ></div>
 
         {/* Social Links */}
-        
+
         <SocialLinks
-          styleClass="flex justify-evenly text-xl sm:text-2xl lg:text-2xl"
+          styleClass="list-none flex justify-evenly text-xl sm:text-2xl lg:text-2xl"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -55,7 +55,7 @@ const Hero = () => {
         </h1>
 
         {/* Introduction */}
-        
+
         <h4
           className="text-3xl sm:text-4xl lg:text-5xl mt-4 lg:mt-6 lg:mb-20 mb-16"
           initial={{ x: 1000 }}
@@ -68,13 +68,16 @@ const Hero = () => {
         {/* Hire me button */}
 
         <div
-        className= "rounded-3xl overflow-hidden mb-2q"
+          className="rounded-3xl overflow-hidden mb-2q"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 3, stiffness: 50, type: "spring" }}
         >
           <Ripples>
-            <Link to= "/contact" className="btn bg-primary hover:bg-primaryDark sm:text-lg">
+            <Link
+              to="/contact"
+              className="btn bg-primary hover:bg-primaryDark sm:text-lg"
+            >
               Hire Me!
             </Link>
           </Ripples>

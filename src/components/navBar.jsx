@@ -1,79 +1,160 @@
 import React, { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 import PageLinks from "../constants/links"
 import { FaAlignRight } from "react-icons/fa"
 import SocialLink from "../constants/socialLinks"
 import Particles from "react-particles-js"
+import { Link } from "gatsby"
 
 const NavBar = () => {
   const [navBarOpened, isNavBarOpened] = useState(false)
-  const container = {
-    hidden: { x: "-100vw" },
-    show: {
-      x: 0,
+
+  const navVariant = {
+    initial: { opacity: 0 },
+    final: {
+      opacity: 1,
       transition: {
-        delay: 0.5,
-        // staggerChildren: 5,
-        // delayChildren: 4,
+        staggerChildren: 0.5,
+        when: "beforeChildren",
       },
     },
   }
+
+  const logoVariant = {
+    initial: { y: "-1000px" },
+    final: {
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        mass: 0.6,
+      },
+    },
+    hover: {
+      scale: 1.3,
+    },
+  }
+
+  const navMenuVariant = {
+    initial: { y: "-100vh" },
+    final: {
+      y: 0,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  }
+
+  const navTogglerVariant = {
+    initial: { y: "-1000px" },
+    final: {
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        mass: 0.6,
+      },
+    },
+  }
+
+  const navMenuLinkVariant = {
+    initial: { opacity: 0, x: -100 },
+    final: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        mass: 0.6,
+        when: ""
+      },
+    },
+  }
+  
+  const mobileNavMenuVariants = {
+    initial: { x: "-100vw" },
+    final: { x: 0 },
+  }
+
+  const navSocialLinkVariants = {
+    initial: { y: "-100vh" },
+    final: {
+      y: 0,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  }
+
+  const navSocialLinkChildrenVariants = {
+    initial: { opacity: 0, y: -100 },
+    final: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 70,
+        mass: 0.6,
+      },
+    },
+  }
+
   return (
-    <nav className="navBar">
+    <motion.nav
+      className="navBar"
+      variants={navVariant}
+      initial="initial"
+      animate="final"
+    >
       <div className="container flex items-center px-4 py-4 mx-auto lg:py-8 lg:space-x-32 navBarDecendant">
         <div className="z-10 flex items-center justify-between flex-grow lg:flex-grow-0">
-          {/* Logo */}
-          <h4
-            className="text-xl font-bold"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ type: "spring", stiffness: 50 }}
+          {/* ANCHOR Logo */}
+          <motion.div
+            className="text-xl font-bold tracking-widest"
+            variants={logoVariant}
+            whileHover="hover"
+            initial="initial"
+            animate="final"
           >
-            IO
-          </h4>
+            <Link to="/">IO</Link>
+          </motion.div>
 
-          {/* NavToggler */}
-          <button
+          {/* ANCHOR NavToggler */}
+          <motion.button
             type="button"
-            className="text-xl transition-colors bg-transparent cursor-pointer focus:outline-none lg:hidden"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
+            className="text-xl bg-transparent focus:outline-none lg:hidden"
+            variants={navTogglerVariant}
             onClick={() => isNavBarOpened(!navBarOpened)}
           >
             <FaAlignRight />
-          </button>
+          </motion.button>
         </div>
 
-        {/* navMenu */}
+        {/* ANCHOR navMenu */}
         <PageLinks
-          styleClass="lg:flex space-x-12 items-center hidden justify-around capitalize tracking-widest text-light w-8/12 z-10 overflow-hidden"
+          styleClass="list-none lg:flex space-x-12 items-center hidden justify-around capitalize tracking-widest text-light w-8/12 z-10 overflow-hidden"
           linkStyle="navItem py-1"
           activeStyleClass="text-primary font-semibold active"
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{
-            type: "tween",
-            delay: 0.5,
-            duration: 2,
-          }}
+          variants={navMenuVariant}
+          variants2={navMenuLinkVariant}
         ></PageLinks>
 
-        {/* mobile NavMenu */}
+        {/* ANCHOR mobile NavMenu */}
         <AnimatePresence>
           {navBarOpened && (
-            <div
+            <motion.div
               className="fixed top-0 left-0 z-50 w-full h-screen text-gray-200 bg-darker"
-              animate={{ x: 0 }}
-              initial={{ x: "-100vw" }}
-              exit={{ x: "-100vw" }}
+              variants={mobileNavMenuVariants}
+              initial="initial"
+              animate="final"
+              exit="initial"
             >
               <Particles
                 className="absolute top-0 left-0 w-full h-screen"
                 params={{
                   detectRetina: true,
-                  fpsLimit: 60,
+                  // fpsLimit: 60,
                   particles: {
                     links: {
                       enable: false,
@@ -137,36 +218,34 @@ const NavBar = () => {
                 }}
               />
 
+              {/* Close button */}
               <button
                 className="focus:outline-none"
                 onClick={() => isNavBarOpened(!navBarOpened)}
               >
                 <AiOutlineCloseCircle className="absolute text-3xl top-4 right-4" />
               </button>
+
               <div className="flex flex-col items-center justify-center h-full space-y-16">
                 <PageLinks
-                  styleClass="flex flex-col justify-center items-center uppercase font-bold text-xl tracking-widest leading-10 space-y-8"
+                  styleClass="list-none flex flex-col justify-center items-center uppercase font-bold text-xl tracking-widest leading-10 space-y-8"
                   linkStyle=""
                   activeStyleClass="mobileActive relative"
-                  variants={container}
+                  variants={navMenuVariant}
+                  variants2={navMenuLinkVariant}
                 ></PageLinks>
+
                 <SocialLink
-                  styleClass="flex justify-evenly text-xl text-2xl w-full"
-                  initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1.5,
-                    stiffness: 50,
-                    damping: 5,
-                    type: "spring",
-                  }}
+                  styleClass="list-none flex justify-evenly text-xl text-2xl w-full"
+                  variants={navSocialLinkVariants}
+                  variants2={navSocialLinkChildrenVariants}
                 />
               </div>
-            </div>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
