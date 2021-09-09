@@ -31,15 +31,38 @@ const data = [
   },
 ]
 
-const SocialLinks = ({ styleClass, variants, variants2 }) => {
+const navSocialLinkVariants = {
+  initial: { y: "-100vh" },
+  final: {
+    y: 0,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+}
+
+const navSocialLinkChildrenVariants = {
+  initial: { opacity: 0, y: -100 },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      mass: 0.6,
+    },
+  },
+}
+
+const SocialLinks = ({ styleClass }) => {
   return (
     <motion.ul
       className={`${styleClass ? styleClass : ""}`}
-      variants={variants}
+      variants={navSocialLinkVariants}
     >
       {data.map(link => {
         return (
-          <motion.li key={link.id} variants={variants2}>
+          <motion.li key={link.id} variants={navSocialLinkChildrenVariants}>
             <a href={link.url}>{link.icon}</a>
           </motion.li>
         )

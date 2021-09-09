@@ -2,76 +2,76 @@ import React from "react"
 import Ripples from "react-ripples"
 import { Link } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
+import { motion } from "framer-motion"
+
+const heroVarariant = {
+  initial: { opacity: 0 },
+  final: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      when: "beforeChildren",
+      delay: 3,
+    },
+  },
+}
+
+const fallingVariant = {
+  initial: { opacity: 0, y: -100 },
+  final: { opacity: 1, y: 0 },
+}
 
 const Hero = () => {
   return (
-    <div className="hero flex flex-col lg:flex-row w-full items-center justify-center tracking-widest py-52 md:py-0">
+    <motion.div
+      className="flex flex-col items-center justify-center w-full tracking-widest hero lg:flex-row py-52 md:py-0"
+      variants={heroVarariant}
+      initial="initial"
+      animate="final"
+    >
       {/* Section one */}
-      <div className="lg:w-7/12 w-full text-center z-10">
+      <div className="z-10 w-full text-center lg:w-7/12">
         {/* Title */}
-        <h5
-          className="sm:text-lg lg:text-xl"
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 2, stiffness: 50, type: "spring" }}
-        >
+        <motion.h5 className="sm:text-lg lg:text-xl" variants={fallingVariant}>
           Front-End Developer
-        </h5>
+        </motion.h5>
 
         {/* Divider */}
 
-        <div
-          className="bg-gray-200 w-full h-px my-8"
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
-        ></div>
+        <motion.div
+          className="w-full h-px my-8 bg-gray-200"
+          variants={fallingVariant}
+        ></motion.div>
 
         {/* Social Links */}
 
-        <SocialLinks
-          styleClass="list-none flex justify-evenly text-xl sm:text-2xl lg:text-2xl"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 3,
-            stiffness: 50,
-            damping: 5,
-            type: "spring",
-          }}
-        />
+        <SocialLinks styleClass="list-none flex justify-evenly text-xl sm:text-2xl lg:text-2xl" />
       </div>
 
       {/* section two */}
-      <div className="lg:w-5/12 flex flex-col items-center justify-center mt-16 lg:mt-0 z-10">
+      <div className="z-10 flex flex-col items-center justify-center mt-16 lg:w-5/12 lg:mt-0">
         {/* Greeting Text */}
-        <h1
-          className="text-6xl sm:text-7xl lg:text-8xl font-bold"
-          initial={{ x: 1000 }}
-          animate={{ x: 0 }}
-          transition={{ delay: 2, stiffness: 50, type: "spring" }}
+        <motion.h1
+          className="text-6xl font-bold sm:text-7xl lg:text-8xl"
+          variants={fallingVariant}
         >
           Hell<span className="text-primary">o</span>,
-        </h1>
+        </motion.h1>
 
         {/* Introduction */}
 
-        <h4
-          className="text-3xl sm:text-4xl lg:text-5xl mt-4 lg:mt-6 lg:mb-20 mb-16"
-          initial={{ x: 1000 }}
-          animate={{ x: 0 }}
-          transition={{ delay: 2.5, stiffness: 50, type: "spring" }}
+        <motion.h4
+          className="mt-4 mb-16 text-3xl sm:text-4xl lg:text-5xl lg:mt-6 lg:mb-20"
+          variants={fallingVariant}
         >
           I am Ibrahim
-        </h4>
+        </motion.h4>
 
         {/* Hire me button */}
 
-        <div
-          className="rounded-3xl overflow-hidden mb-2q"
-          initial={{ x: 1000 }}
-          animate={{ x: 0 }}
-          transition={{ delay: 3, stiffness: 50, type: "spring" }}
+        <motion.div
+          className="overflow-hidden rounded-3xl mb-2"
+          variants={fallingVariant}
         >
           <Ripples>
             <Link
@@ -81,9 +81,9 @@ const Hero = () => {
               Hire Me!
             </Link>
           </Ripples>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
