@@ -5,6 +5,7 @@ import Seo from "../components/seo"
 import * as animationData from "../json/contact.json"
 import ContactForm from "../components/ContactForm"
 import Lottie from "react-lottie"
+import { motion } from "framer-motion"
 
 const defaultOptions = {
   loop: true,
@@ -13,38 +14,83 @@ const defaultOptions = {
   className: "wow"
 }
 
+const contactVariant = {
+  initial: { opacity: 0 },
+  final: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      when: "beforeChildren",
+      delay: 3,
+    },
+  },
+}
+
+const subsectionVarinat = {
+  initial: { opacity: 0 },
+  final: {
+    opacity: 1, transition: {staggerChildren: 0.5}
+  },
+}
+
+const imageVariant = {
+  initial: { opacity: 0 },
+  final: {
+    opacity: 1,
+  },
+}
+
+const interestVarinat = {
+  initial: { opacity: 0, x: -100 },
+  final: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      mass: 0.6,
+    },
+  },
+}
+
 const contact = () => {
   return (
     <Layout>
       <Seo title="Contact" desc="This is the contact page" />
-      <HeaderTitles title="Get In Touch" className="contactTitle" />
+      <motion.div variants={contactVariant} initial="initial" animate="final">
+        <HeaderTitles title="Get In Touch" className="contactTitle" />
 
-      <div
-        className="flex justify-center items-center"
-        style={{ "min-height": "83vh" }}
-      >
-        <div className="flex flex-col items-center justify-center space-x-0 lg:flex-row lg:space-x-8">
-          <div className="w-full py-8 lg:py-0 lg:w-1/2">
-            <i className= "IWithSVG">
-              <Lottie
-                options={defaultOptions}
-                ariaRole="div"
-                style={{ pointerEvents: "none" }}
-              />
-            </i>
-          </div>
-          <div className="w-full py-8 lg:w-1/2 lg:py-0">
-            <h6 className="px-4 text-xs tracking-widest text-gray-300 capitalize border-l-4 sm:text-sm border-primary">
-              I’m interested in freelance opportunities – especially ambitious
-              or large projects. However, if you have other request or question,
-              don’t hesitate to use the form.
-            </h6>
+        <div
+          className="flex items-center justify-center"
+          style={{ "min-height": "83vh" }}
+        >
+          <motion.div
+            className="flex flex-col items-center justify-center space-x-0 lg:flex-row lg:space-x-8"
+            variants={subsectionVarinat}
+          >
+            <div className="w-full py-8 lg:py-0 lg:w-1/2">
+              <motion.i className="IWithSVG" variants={imageVariant}>
+                {/* ANCHOR Lottie */}
+                <Lottie
+                  options={defaultOptions}
+                  ariaRole="div"
+                  style={{ pointerEvents: "none" }}
+                />
+              </motion.i>
+            </div>
+            <div className="w-full py-8 lg:w-1/2 lg:py-0">
+              <motion.h6 className="px-4 text-xs tracking-widest text-gray-300 capitalize border-l-4 sm:text-sm border-primary" variants= {interestVarinat}>
+                I’m interested in freelance opportunities – especially ambitious
+                or large projects. However, if you have other request or
+                question, don’t hesitate to use the form.
+              </motion.h6>
 
-            {/* Form */}
-            <ContactForm />
-          </div>
+              {/* Form */}
+              <ContactForm />
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </Layout>
   )
 }
