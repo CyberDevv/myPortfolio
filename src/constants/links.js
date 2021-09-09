@@ -1,6 +1,6 @@
 import React from "react"
-import { motion } from "framer-motion"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
 
 const data = [
   {
@@ -30,22 +30,16 @@ const PageLinks = ({
   linkStyle,
   activeStyleClass,
   variants,
+  variants2,
 }) => {
   return (
     <motion.ul
       className={`${styleClass ? styleClass : ""}`}
-      initial="hidden"
-      animate="show"
       variants={variants}
     >
       {data.map(link => {
         return (
-          <motion.li
-            key={link.id}
-            initial={{ x: "-100vw" }}
-            animate={{ x: 0 }}
-            transition={{ delay: 0.5, type: "spring", stiffness: "50" }}
-          >
+          <motion.li key={link.id} variants={variants2}>
             <Link
               className={`${linkStyle ? linkStyle : ""}`}
               activeClassName={`${activeStyleClass ? activeStyleClass : ""}`}

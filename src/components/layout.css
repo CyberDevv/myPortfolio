@@ -36,9 +36,9 @@ body {
   overflow-x: clip;
 }
 
-ul {
+/* .listNone {
   list-style-type: none !important;
-}
+} */
 
 footer {
   background-color: #101010;
