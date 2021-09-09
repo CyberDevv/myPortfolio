@@ -1,19 +1,29 @@
+import { motion } from "framer-motion"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Project from "./Project"
+
+const projectVariant = {
+  initial: { opacity: 0 },
+  final: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+}
 
 const Projects = () => {
   const data = useStaticQuery(query)
   const {
     allStrapiProjects: { nodes: projects },
   } = data
-  console.log(projects)
   return (
-    <div>
+    <motion.div variants={projectVariant}>
       {projects.map((project, index) => {
         return <Project key={project.id} index={index} {...project} />
       })}
-    </div>
+    </motion.div>
   )
 }
 
