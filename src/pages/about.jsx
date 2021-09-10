@@ -1,10 +1,11 @@
-import { motion } from "framer-motion"
-import React from "react"
+import { motion, useAnimation } from "framer-motion"
+import React, { useEffect } from "react"
 import AboutMe from "../components/AboutMe"
 import HeaderTitles from "../components/HeaderTitles"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Skills from "../components/Skills"
+import { useInView } from "react-intersection-observer"
 
 const aboutVariant = {
   initial: { opacity: 0 },
@@ -13,37 +14,46 @@ const aboutVariant = {
     transition: {
       staggerChildren: 0.5,
       when: "beforeChildren",
-      delay: 3
+      delay: 2.5,
     },
   },
 }
 
-const about = () => {
+const About = () => {
+  const { ref, inView } = useInView({threshold: 0.2})
+  const animation = useAnimation()
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1
+      })
+    }
+    if (!inView) {
+      animation.start({opacity: 0})
+    }
+    console.log("use effect hook, inview = ", inView)
+  }, [inView])
   return (
     <Layout>
       <Seo
         title="About"
         desc="Know more about me and also checkout some of my skills."
       />
-      <motion.div variants={aboutVariant} initial= "initial" animate= "final">
-        <HeaderTitles
-          title="Know About Me"
-          className="aboutTitle"
-        />
+      <motion.div variants={aboutVariant} initial="initial" animate="final">
+        <HeaderTitles title="Know About Me" className="aboutTitle" />
 
         <AboutMe />
 
         {/* Skills */}
 
-        <HeaderTitles
-          title="Skills"
-          className="skillTitle mt-32"
-        />
+        <motion.div ref={ref} animate= {animation}>
+          <HeaderTitles title="Skills" className="skillTitle mt-32" />
 
-        <Skills />
+          <Skills />
+        </motion.div>
       </motion.div>
     </Layout>
   )
 }
 
-export default about
+export default About

@@ -12,7 +12,7 @@ const projectVariant = {
     transition: {
       staggerChildren: 0.5,
       when: "beforeChildren",
-      delay: 3,
+      delay: 2.5,
     },
   },
 }
