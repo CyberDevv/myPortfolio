@@ -404,6 +404,27 @@ footer {
 .project-icon:hover {
   color: #b8002e;
 }
+
+.parallax-effect {
+  transform-style: preserve-3d;
+}
+
+.inner-element {
+  transition:  transform 1s ease-in-out;
+  -webkit-transition:  transform 1s ease-in-out;
+  -moz-transition:  transform 1s ease-in-out;
+  -ms-transition:  transform 1s ease-in-out;
+  -o-transition:  transform 1s ease-in-out;
+}
+
+.parallax-effect:hover .inner-element {
+  transform: translateZ(50px);
+  -webkit-transform: translateZ(50px);
+  -moz-transform: translateZ(50px);
+  -ms-transform: translateZ(50px);
+  -o-transform: translateZ(50px);
+}
+
 @media screen and (min-width: 576px) {
   .project-img {
     height: 19rem;

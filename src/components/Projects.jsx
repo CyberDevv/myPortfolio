@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import Tilt from "react-parallax-tilt"
 import Project from "./Project"
 
 const projectVariant = {
@@ -21,7 +22,18 @@ const Projects = () => {
   return (
     <motion.div variants={projectVariant}>
       {projects.map((project, index) => {
-        return <Project key={project.id} index={index} {...project} />
+        return (
+          <Tilt
+            key={project.id}
+            index={index}
+            className="parallax-effect p-16"
+            perspective={800}
+            scale={0.9}
+            gyroscope={true}
+          >
+            <Project {...project} />
+          </Tilt>
+        )
       })}
     </motion.div>
   )

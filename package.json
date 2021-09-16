@@ -30,6 +30,7 @@
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.32.1",
     "react-lottie": "^1.2.3",
+    "react-parallax-tilt": "^1.5.61",
     "react-particles-js": "^3.5.3",
     "react-ripples": "^2.2.1",
     "tsparticles": "^1.34.0"
