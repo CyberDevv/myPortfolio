@@ -5,6 +5,13 @@ import Seo from "../components/seo"
 import Project from "../components/Projects"
 import { motion } from "framer-motion"
 
+const vw = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+)
+
+console.log(vw)
+
 const projectVariant = {
   initial: { opacity: 0 },
   final: {
@@ -12,7 +19,7 @@ const projectVariant = {
     transition: {
       staggerChildren: 0.5,
       when: "beforeChildren",
-      delay: 2.5,
+      delay: vw >= 1024 ? 2.5 : 1
     },
   },
 }

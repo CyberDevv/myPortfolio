@@ -7,6 +7,11 @@ import ContactForm from "../components/ContactForm"
 import Lottie from "react-lottie"
 import { motion } from "framer-motion"
 
+const vw = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+)
+
 const defaultOptions = {
   loop: true,
   autoplay: true,
@@ -21,7 +26,7 @@ const contactVariant = {
     transition: {
       staggerChildren: 0.5,
       when: "beforeChildren",
-      delay: 2.5,
+      delay: vw >= 1024 ? 2.5 : 1
     },
   },
 }

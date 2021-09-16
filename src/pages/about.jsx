@@ -7,6 +7,11 @@ import Seo from "../components/seo"
 import Skills from "../components/Skills"
 import { useInView } from "react-intersection-observer"
 
+const vw = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+)
+
 const aboutVariant = {
   initial: { opacity: 0 },
   final: {
@@ -14,7 +19,7 @@ const aboutVariant = {
     transition: {
       staggerChildren: 0.5,
       when: "beforeChildren",
-      delay: 2.5,
+      delay: vw >= 1024 ? 2.5 : 1,
     },
   },
 }
