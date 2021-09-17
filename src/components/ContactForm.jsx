@@ -2,16 +2,18 @@ import React from "react"
 import FormInput from "../components/FormInput"
 import Ripples from "react-ripples"
 import { useForm, ValidationError } from "@formspree/react"
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const formVariant = {
-  initial: {opacity: 0},
-  final: {opacity: 1, transition: {staggerChildren: 0.5}}
+  initial: { opacity: 0 },
+  final: { opacity: 1, transition: { staggerChildren: 0.5 } },
 }
 
 const nameInuputVariants = {
-  initial: {opacity: 0, x: -100},
-  final: {opacity: 1, x: 0}
+  initial: { opacity: 0, x: -100 },
+  final: { opacity: 1, x: 0 },
 }
 
 const emailInuputVariants = {
@@ -25,14 +27,23 @@ const buttonVariants = {
 }
 
 const ContactForm = () => {
+  const notify = () => toast.success("Message sent!")
+  const notifyError = () => toast.success("Error sent!")
   const [state, handleSubmit] = useForm("xrgrravk")
   if (state.succeeded) {
     return (
-      <div className="fixed h-screen w-full top-0 left-0 bg-black bg-opacity-60 flex justify-center items-center">
-        <div className="bg-gray-200 rounded-3xl max-w-md h-72">
-          Thank You for your ...
-        </div>
-      </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     )
   }
   return (
@@ -75,12 +86,13 @@ const ContactForm = () => {
       </motion.div>
       <ValidationError prefix="Message" field="message" errors={state.errors} />
 
-      <motion.div variants= {buttonVariants}>
+      <motion.div variants={buttonVariants}>
         <Ripples>
           <button
             type="submit"
             className="btn bg-primary hover:bg-primaryDark"
             disabled={state.submitting}
+            onClick={ notify}
           >
             Send Message
           </button>

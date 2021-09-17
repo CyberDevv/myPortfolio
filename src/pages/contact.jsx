@@ -52,6 +52,7 @@ const contact = () => {
       window.innerWidth || 0
     )
   }
+  
   const contactVariant = {
     initial: { opacity: 0 },
     final: {
@@ -63,6 +64,7 @@ const contact = () => {
       },
     },
   }
+
   return (
     <Layout>
       <Seo title="Contact" desc="This is the contact page" />
