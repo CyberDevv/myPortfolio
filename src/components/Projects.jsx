@@ -26,10 +26,9 @@ const Projects = () => {
           <Tilt
             key={project.id}
             index={index}
-            className="parallax-effect p-16"
+            className="parallax-effect md:p-4 lg:p-16"
             perspective={800}
-            scale={0.9}
-            gyroscope={true}
+            scale= {0.9}
           >
             <Project {...project} />
           </Tilt>

@@ -7,24 +7,28 @@ import Seo from "../components/seo"
 import Skills from "../components/Skills"
 import { useInView } from "react-intersection-observer"
 
-const vw = Math.max(
-  document.documentElement.clientWidth || 0,
-  window.innerWidth || 0
-)
-
-const aboutVariant = {
-  initial: { opacity: 0 },
-  final: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      when: "beforeChildren",
-      delay: vw >= 1024 ? 2.5 : 1,
-    },
-  },
-}
+const isWindow = typeof window !== "undefined"
+const isDocumnent = typeof document !== "undefined"
 
 const About = () => {
+  let vw = null
+  if (isWindow && isDocumnent) {
+    vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    )
+  }
+  const aboutVariant = {
+    initial: { opacity: 0 },
+    final: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        when: "beforeChildren",
+        delay: vw >= 1024 ? 2.5 : 1,
+      },
+    },
+  }
   const { ref, inView } = useInView({threshold: 0.2})
   const animation = useAnimation()
   useEffect(() => {

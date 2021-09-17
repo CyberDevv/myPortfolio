@@ -7,28 +7,14 @@ import ContactForm from "../components/ContactForm"
 import Lottie from "react-lottie"
 import { motion } from "framer-motion"
 
-const vw = Math.max(
-  document.documentElement.clientWidth || 0,
-  window.innerWidth || 0
-)
+const isWindow = typeof window !== "undefined"
+const isDocumnent = typeof document !== "undefined"
 
 const defaultOptions = {
   loop: true,
   autoplay: true,
   animationData: animationData,
   className: "wow"
-}
-
-const contactVariant = {
-  initial: { opacity: 0 },
-  final: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      when: "beforeChildren",
-      delay: vw >= 1024 ? 2.5 : 1
-    },
-  },
 }
 
 const subsectionVarinat = {
@@ -59,6 +45,24 @@ const interestVarinat = {
 }
 
 const contact = () => {
+  let vw = null
+  if (isWindow && isDocumnent) {
+    vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    )
+  }
+  const contactVariant = {
+    initial: { opacity: 0 },
+    final: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        when: "beforeChildren",
+        delay: vw >= 1024 ? 2.5 : 1,
+      },
+    },
+  }
   return (
     <Layout>
       <Seo title="Contact" desc="This is the contact page" />
