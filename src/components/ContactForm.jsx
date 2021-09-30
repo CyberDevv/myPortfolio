@@ -28,7 +28,7 @@ const buttonVariants = {
 
 const ContactForm = () => {
   const notify = () => toast.success("Message sent!")
-  const notifyError = () => toast.success("Error sent!")
+  // const notifyError = () => toast.success("Error sent!")
   const [state, handleSubmit] = useForm("xrgrravk")
   if (state.succeeded) {
     return (

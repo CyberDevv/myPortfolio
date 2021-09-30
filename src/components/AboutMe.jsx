@@ -171,7 +171,7 @@ const AboutMe = () => {
           <div className="relative flex justify-center items-center">
             <motion.div variants={imageVarinat}>
               <StaticImage
-                src="../images/myImage.jpg"
+                src="../images/myImage.jpeg"
                 alt="myImage"
                 className="rounded-full myIMage h-60 w-60 xl:h-80 xl:w-80"
                 placeholder="tracedSVG"
