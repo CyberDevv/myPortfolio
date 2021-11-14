@@ -27,7 +27,7 @@ const IndexPage = () => {
   const particleVariant = {
     initial: { opacity: 0 },
     final: {
-      opacity: 1,
+      opacity: 0.5,
       transition: {
         duration: 3,
       },

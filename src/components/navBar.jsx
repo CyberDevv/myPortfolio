@@ -67,11 +67,11 @@ const NavBar = () => {
         type: "spring",
         stiffness: 70,
         mass: 0.6,
-        when: ""
+        when: "",
       },
     },
   }
-  
+
   const mobileNavMenuVariants = {
     initial: { x: "-100vw" },
     final: { x: 0 },
@@ -212,9 +212,7 @@ const NavBar = () => {
                   variants2={navMenuLinkVariant}
                 ></PageLinks>
 
-                <SocialLink
-                  styleClass="list-none flex justify-evenly text-xl text-2xl w-full"
-                />
+                <SocialLink styleClass="list-none flex justify-evenly text-xl text-2xl w-full" />
               </div>
             </motion.div>
           )}
