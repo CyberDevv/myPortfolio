@@ -9,9 +9,9 @@ const heroVarariant = {
   final: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
       when: "beforeChildren",
-      delay: 2.5,
+      delay: 1.5,
     },
   },
 }

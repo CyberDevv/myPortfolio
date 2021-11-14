@@ -8,7 +8,7 @@ const projectVariant = {
   final: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
     },
   },
 }
@@ -21,9 +21,7 @@ const Projects = () => {
   return (
     <motion.div variants={projectVariant}>
       {projects.map((project, index) => {
-        return (
-            <Project {...project} />
-        )
+        return <Project {...project} />
       })}
     </motion.div>
   )

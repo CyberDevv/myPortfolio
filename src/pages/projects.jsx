@@ -21,10 +21,9 @@ const project = () => {
     final: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
         when: "beforeChildren",
-        delay: vw >= 1024 ? 2.5 : 1,
-        // delay: 2.5,
+        delay: vw >= 1024 ? 1.5 : 0.5,
       },
     },
   }

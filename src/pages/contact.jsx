@@ -14,13 +14,14 @@ const defaultOptions = {
   loop: true,
   autoplay: true,
   animationData: animationData,
-  className: "wow"
+  className: "wow",
 }
 
 const subsectionVarinat = {
   initial: { opacity: 0 },
   final: {
-    opacity: 1, transition: {staggerChildren: 0.5}
+    opacity: 1,
+    transition: { staggerChildren: 0.5 },
   },
 }
 
@@ -52,15 +53,15 @@ const contact = () => {
       window.innerWidth || 0
     )
   }
-  
+
   const contactVariant = {
     initial: { opacity: 0 },
     final: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
         when: "beforeChildren",
-        delay: vw >= 1024 ? 2.5 : 1,
+        delay: vw >= 1024 ? 1.5 : 0.5,
       },
     },
   }
@@ -90,7 +91,10 @@ const contact = () => {
               </motion.i>
             </div>
             <div className="w-full py-8 lg:w-1/2 lg:py-0">
-              <motion.h6 className="px-4 text-xs tracking-widest text-gray-300 capitalize border-l-4 sm:text-sm border-primary" variants= {interestVarinat}>
+              <motion.h6
+                className="px-4 text-xs tracking-widest text-gray-300 capitalize border-l-4 sm:text-sm border-primary"
+                variants={interestVarinat}
+              >
                 I’m interested in freelance opportunities – especially ambitious
                 or large projects. However, if you have other request or
                 question, don’t hesitate to use the form.

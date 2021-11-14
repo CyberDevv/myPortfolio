@@ -15,7 +15,7 @@ const NavBar = () => {
     final: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
         when: "beforeChildren",
       },
     },
@@ -41,7 +41,7 @@ const NavBar = () => {
     final: {
       y: 0,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
       },
     },
   }

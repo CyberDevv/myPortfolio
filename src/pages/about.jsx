@@ -23,24 +23,23 @@ const About = () => {
     final: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
         when: "beforeChildren",
-        delay: vw >= 1024 ? 2.5 : 1,
+        delay: vw >= 1024 ? 1.5 : 0.5,
       },
     },
   }
-  const { ref, inView } = useInView({threshold: 0.2})
+  const { ref, inView } = useInView({ threshold: 0.2 })
   const animation = useAnimation()
   useEffect(() => {
     if (inView) {
       animation.start({
-        opacity: 1
+        opacity: 1,
       })
     }
     if (!inView) {
-      animation.start({opacity: 0})
+      animation.start({ opacity: 0 })
     }
-    console.log("use effect hook, inview = ", inView)
   }, [inView])
   return (
     <Layout>
@@ -55,7 +54,7 @@ const About = () => {
 
         {/* Skills */}
 
-        <motion.div ref={ref} animate= {animation}>
+        <motion.div ref={ref} animate={animation}>
           <HeaderTitles title="Skills" className="skillTitle mt-32" />
 
           <Skills />

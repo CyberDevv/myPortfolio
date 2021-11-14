@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css"
 
 const formVariant = {
   initial: { opacity: 0 },
-  final: { opacity: 1, transition: { staggerChildren: 0.5 } },
+  final: { opacity: 1, transition: { staggerChildren: 0.3 } },
 }
 
 const nameInuputVariants = {

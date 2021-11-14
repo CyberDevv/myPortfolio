@@ -34,7 +34,7 @@ const divider = {
       type: "spring",
       stiffness: 70,
       mass: 0.6,
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
       when: "beforeChildren",
       delay: 1,
     },
@@ -51,7 +51,7 @@ const links = {
     y: 0,
     transition: {
       type: "spring",
-      stiffness: "20",
+      stiffness: "50",
     },
   },
 }
@@ -62,7 +62,7 @@ const imageAnim = {
   },
   final: {
     opacity: 1,
-    transition: { delay: 2.5, staggerChildren: 0.5, when: "beforeChildren" },
+    transition: { delay: 1.5, staggerChildren: 0.3, when: "beforeChildren" },
   },
 }
 
@@ -73,7 +73,10 @@ const imageVarinat = {
 
 const imageParentVarinat = {
   initial: { opacity: 0 },
-  final: { opacity: 1, transition: {staggerChildren: 0.5, when: "beforeChildren"} },
+  final: {
+    opacity: 1,
+    transition: { staggerChildren: 0.3, when: "beforeChildren" },
+  },
 }
 
 const AboutMe = () => {
